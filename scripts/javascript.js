@@ -26,7 +26,11 @@ function streetFood () {
         // Create HTML from row data
         // const listRow = (data.features[i].properties.Name)
 
-        console.log(data.features[i].properties.Name)
+        // console.log(data.features[i].properties.Name)
+
+        console.log(i)
+
+        document.querySelector('.container-fluid').innerHTML += `<ul><li>` + (data.features[i].properties.Name) + `</ul>`
 
         // Append HTML to  table HTML
         // list.innerText += listRow
