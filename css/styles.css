@@ -26,7 +26,6 @@
 
 
     .container-fluid {
-        background-color:red;
         grid-column: 2;
         justify-content: center;
         text-align: center;
@@ -37,7 +36,7 @@
  /* end of desktop size media query */
 
 body {
-    background-color: var(--container-color) !important;
+    /* background-color: var(--container-color) !important; */
 }
 
 iframe {
