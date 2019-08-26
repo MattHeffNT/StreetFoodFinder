@@ -2,6 +2,40 @@
     --container-color: rgba(54, 135, 215, 0.38);
 }
 
+/* Desktop display media query (just for testing purposes) */
+
+@media only screen and (min-width: 800px) {
+    body {
+        display:grid;
+        /* max-width: 1080px; */
+        margin: 0 auto;
+        grid-gap: 1px;
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    .embed-container {
+        position: relative;
+        padding-bottom: 80%;
+        height: 0;
+        max-width: 100%;
+        grid-column:2;
+        /* margin-top: em */
+    }
+
+
+
+    .container-fluid {
+        background-color:red;
+        grid-column: 2;
+        justify-content: center;
+        text-align: center;
+    }
+    }
+
+  
+ /* end of desktop size media query */
+
 body {
     background-color: var(--container-color) !important;
 }
