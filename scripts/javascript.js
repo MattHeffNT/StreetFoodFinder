@@ -1,12 +1,3 @@
-// fetch('https://opendata.arcgis.com/datasets/f62cbfbf11494495984097ef8ed6a8a9_0.geojson')
-//   .then(response => {
-//     return response.json()
-//   })
-//   .then(data => {
-//     // Work with JSON data here
-//     // i can start looping through all the names and stuff to then display it
-//     console.log(data.features[0].properties.Name)
-//   })
 
 function streetFood () {
   var url = 'https://opendata.arcgis.com/datasets/f62cbfbf11494495984097ef8ed6a8a9_0.geojson'
@@ -15,25 +6,24 @@ function streetFood () {
     // Get JSON object from request
     .then((response) => response.json())
     .then((data) => {
-      // Get our target element
-    //   const list = document.querySelector('ul')
-      // Clear old results
-    //   list.innerText = ''
-      // Iterate through each row
-    //   console.log(data.features)
-      // console.log(data.features.length)
       for (let i = 0; i < data.features.length; i++) {
-        // Create HTML from row data
-        // const listRow = (data.features[i].properties.Name)
 
-        // console.log(data.features[i].properties.Name)
-
-        console.log(i)
-
+        // Append vendors to container-fluid list
         document.querySelector('.container-fluid').innerHTML += `<ul><li>` + (data.features[i].properties.Name) + `</ul>`
 
-        // Append HTML to  table HTML
-        // list.innerText += listRow
       }
     })
 };
+
+// get user location
+navigator.geolocation.getCurrentPosition(
+  function (position) {
+    console.log('Success', position)
+  },
+  function (err) {
+    console.error('Error', err)
+  }
+)
+
+// now i can write some code  below to extract vendor long/lat then code to work out distance between user, thinking that
+// I may need to import the arcgis map into Google Maps API though.
