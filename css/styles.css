@@ -38,6 +38,8 @@
         grid-column: 2;
         justify-content: center;
         text-align: center;
+        border-style:solid;
+        border-width:3px;
     }
 }
 
@@ -95,6 +97,6 @@ small {
 }
 
 .container-fluid {
-    background-color: var(--container-color);
+    /* background-color: var(--container-color); */
     /* margin-top: 0.4em; */
 }
