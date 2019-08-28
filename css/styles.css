@@ -12,8 +12,6 @@
         grid-gap: 1px;
         grid-template-columns: repeat(3, 1fr);
         margin-top:1em;
-
-
     }
 
     #map {
@@ -21,6 +19,7 @@
         /* The height is 400 pixels */
         width: 100%;
         /* The width is the width of the web page */
+        
 
     }
 
@@ -30,6 +29,8 @@
         height: 0;
         max-width: 100%;
         grid-column: 2;
+        border-style:solid;
+        border-width:3px;
         /* margin-top: em */
     }
 
