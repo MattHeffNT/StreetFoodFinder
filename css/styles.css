@@ -2,6 +2,7 @@
     --container-color: rgba(54, 135, 215, 0.38);
 }
 
+
 /* Desktop display media query (just for testing purposes) */
 
 @media only screen and (min-width: 800px) {
