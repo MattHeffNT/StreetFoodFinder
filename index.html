@@ -14,10 +14,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-    <!-- mobile responsive darwin city council map api etc -->
+    <!-- google maps API (better than the one Darwin Council was using) -->
 
-    <link rel="stylesheet" href="https://js.arcgis.com/4.11/esri/themes/light/main.css">
-    <script src="https://js.arcgis.com/4.11/"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmtHVjZc_Jh5Jx8WWQqZKKhbu90KwrqgE&callback=initMap">
+  </script>
 
     <!-- my local javascript file -->
     <script src="./scripts/javascript.js"></script>
@@ -31,11 +32,9 @@
 
 
 <!-- container for the map -->
-    <div class="embed-container">
+    <div class="embed-container" id="map">
 
 
-      <iframe
-        src="https://arcgis.com/apps/Embed/index.html?webmap=0af88b139fe44718bdb9c705029d7a8c&extent=130.796,-12.4655,130.9376,-12.3813&zoom=false&previewImage=false&scale=false&search=true&searchextent=true&disable_scroll=true&theme=dark"></iframe>
     </div>
 
     <div class="container-fluid">

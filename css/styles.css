@@ -11,7 +11,13 @@
         margin: 0 auto;
         grid-gap: 1px;
         grid-template-columns: repeat(3, 1fr);
+       
 
+    }
+
+    #map {
+
+        
     }
 
     .embed-container {
@@ -37,6 +43,7 @@
 
 body {
     /* background-color: var(--container-color) !important; */
+    margin-top:1em;
 }
 
 iframe {
