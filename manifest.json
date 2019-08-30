@@ -2,14 +2,14 @@
     "name": "Darwin Street Food Finder",
     "short_name": "Street Food Find",
     "icons": [{
-            "src": "images/icons/icon-128.png",
+            "src": "styles/dinner.svg",
             "sizes": "128x128",
-            "type": "image/png"
+            "type": "image/svg"
         },
         {
-            "src": "images/icons/icon-512.png",
+            "src": "styles/dinner.svg",
             "sizes": "512x512",
-            "type": "image/png"
+            "type": "image/svg"
         }
     ],
     "start_url": "index.html",
