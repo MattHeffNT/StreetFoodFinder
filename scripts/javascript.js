@@ -10,6 +10,19 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+self.addEventListener('fetch', function(event) {
+    event.respondWith(
+        caches.match(event.request)
+        .then(function(response) {
+            // Cache hit - return response
+            if (response) {
+                return response;
+            }
+            return fetch(event.request);
+        })
+    );
+});
+
 
 function streetFood() {
     var url = 'https://opendata.arcgis.com/datasets/f62cbfbf11494495984097ef8ed6a8a9_0.geojson'
