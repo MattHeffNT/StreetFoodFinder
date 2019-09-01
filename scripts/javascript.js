@@ -10,16 +10,19 @@ if ('serviceWorker' in navigator) {
   })
 }
 
+// This function pulls in the JSON file from Darwin City council then gives each business object a variable
+
 function streetFood () {
   var url = 'https://opendata.arcgis.com/datasets/f62cbfbf11494495984097ef8ed6a8a9_0.geojson'
   // Send request to server
   fetch(url)
-  // Get JSON object from request
+    // Get JSON object from request
     .then((response) => response.json())
     .then((data) => {
       for (let i = 0; i < data.features.length; i++) {
         // Append vendors to container-fluid list
-        document.querySelector('.container-fluid').innerHTML += `<ul><li>` + (data.features[i].properties.Name) + `</ul>`
+        this['vendor' + [i]] = [data.features[i].properties]
+        document.querySelector('.carousel-caption d-none d-md-block').innerHTML += this.vendor[i].properties.Name
       }
     })
 };
@@ -28,6 +31,7 @@ function streetFood () {
 navigator.geolocation.getCurrentPosition(
   function (position) {
     console.log('Success', position)
+    console.log(position.coords.longitude)
   },
   function (err) {
     console.error('Error', err)
@@ -39,12 +43,9 @@ navigator.geolocation.getCurrentPosition(
 
 // google map api key AIzaSyBmtHVjZc_Jh5Jx8WWQqZKKhbu90KwrqgE
 // var map
-
-// function initMap() {
-//     map = new google.maps.Map(document.getElementById('map'), {
-//         center: { lat: -34.397, lng: 150.644 },
-//         zoom: 8
-//     })
+// function initMap () {
+//   map = new google.maps.Map(document.getElementById('map'), {
+//     center: { lat: -34.397, lng: 150.644 },
+//     zoom: 8
+//   })
 // }
-
-// Service worker
