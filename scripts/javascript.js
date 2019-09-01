@@ -1,4 +1,6 @@
 
+// This function pulls in the JSON file from Darwin City council then gives each business object a variable
+
 function streetFood () {
   var url = 'https://opendata.arcgis.com/datasets/f62cbfbf11494495984097ef8ed6a8a9_0.geojson'
   // Send request to server
@@ -8,7 +10,8 @@ function streetFood () {
     .then((data) => {
       for (let i = 0; i < data.features.length; i++) {
         // Append vendors to container-fluid list
-        document.querySelector('.container-fluid').innerHTML += `<ul><li>` + (data.features[i].properties.Name) + `</ul>`
+        this['vendor' + [i]] = [data.features[i].properties]
+        document.querySelector('.carousel-caption d-none d-md-block').innerHTML += this.vendor[i].properties.Name
       }
     })
 };
