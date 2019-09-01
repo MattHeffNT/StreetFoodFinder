@@ -9,6 +9,7 @@
     body {
         display: grid;
         /* max-width: 1080px; */
+        width: 
         margin: 0 auto;
         grid-gap: 1px;
         grid-template-columns: repeat(3, 1fr);
@@ -70,7 +71,7 @@ iframe {
     padding-bottom: 80%;
     height: 0;
     max-width: 100%;
-    /* margin-top: em */
+
 }
 
 .embed-container iframe,
@@ -93,4 +94,11 @@ small {
 .container-fluid {
     /* background-color: var(--container-color); */
     /* margin-top: 0.4em; */
+}
+
+.container {
+    /* overflow:scroll !important; */
+}
+.col-sm {
+    
 }

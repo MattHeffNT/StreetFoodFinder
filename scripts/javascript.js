@@ -1,16 +1,17 @@
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function () {
-    navigator.serviceWorker.register('sw.js').then(function (registration) {
-      // Registration was successful
-      console.log('ServiceWorker registration successful with scope: ', registration.scope)
-    }, function (err) {
-      // registration failed :(
-      console.log('ServiceWorker registration failed: ', err)
-    })
-  })
-}
+// if ('serviceWorker' in navigator) {
+//   window.addEventListener('load', function () {
+//     navigator.serviceWorker.register('sw.js').then(function (registration) {
+//       // Registration was successful
+//       console.log('ServiceWorker registration successful with scope: ', registration.scope)
+//     }, function (err) {
+//       // registration failed :(
+//       console.log('ServiceWorker registration failed: ', err)
+//     })
+//   })
+// }
 
-// This function pulls in the JSON file from Darwin City council then gives each business object a variable
+// This function pulls in the JSON file from Darwin City council then gives each business object a variable ooh and I just figured out template literals too so now they displaying data
+// dynamically.
 
 function streetFood () {
   var url = 'https://opendata.arcgis.com/datasets/f62cbfbf11494495984097ef8ed6a8a9_0.geojson'
@@ -20,9 +21,35 @@ function streetFood () {
     .then((response) => response.json())
     .then((data) => {
       for (let i = 0; i < data.features.length; i++) {
-        // Append vendors to container-fluid list
-        this['vendor' + [i]] = [data.features[i].properties]
-        document.querySelector('.carousel-caption d-none d-md-block').innerHTML += this.vendor[i].properties.Name
+
+        // Append vendors to container list
+
+        document.querySelector('.container').innerHTML +=
+        
+        `<div class = "row"
+        <div class="col-sm">
+            <!-- Card -->
+                      <div class="card">
+
+                        <!-- Card image -->
+                        <div class="view overlay">
+                          <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap">
+                          <a href="#!">
+                            <div class="mask rgba-white-slight"></div>
+                          </a>
+                        </div>
+
+                        <!-- Card content -->
+                        <div class="card-body">
+
+                          <!-- Title -->
+                          <h4 class="card-title">${data.features[i].properties.Name}</h4>
+                          <!-- Text -->
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                        </div>
+
+                      </div>`
       }
     })
 };
