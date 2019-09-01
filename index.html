@@ -6,13 +6,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS and js -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js"></script>
 
 
     <!-- my local javascript file -->
@@ -26,26 +33,88 @@
   <body onload="streetFood()">
 
 
-<!-- container for the map -->
-    <div class="embed-container" id="map">
-    </div>
+    <!-- container for the map -->
+    <!-- <div class="embed-container" id="map">
+    </div> -->
 
     <div class="container-fluid">
 
       <!-- this is just importing design direct from paper prototype, but for MVP a list would probably suffice -->
-<!--       
+      <!--       
       <h3 style="color:white;">Recently Viewed</h3> -->
 
 
-        <!-- <div class="card" style="width: 18rem;">
+      <!-- <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="https://scontent-syd2-1.xx.fbcdn.net/v/t1.0-9/29511555_2398253843595638_4558347639917117440_n.jpg?_nc_cat=102&_nc_eui2=AeFKT3NRlNEXb8is9z7As8ME5GlpbpGx3XiB6V-TxZ6VojtowwBa7FpAp8PdXUw6EWbTVmQQu9Q7_A3gw1kQPIGdgnEvUce_ZFbQMBmGTRip9Q&_nc_oc=AQnxSHphbldTRaRprKNSMtWKHQJZbe7K2SuC7WlexBxK5aEpPSrfQiQP2D27n781u2w&_nc_ht=scontent-syd2-1.xx&oh=fc95e0511cb3d99d78197c0410cd3fbc&oe=5DCE8F07"
              alt="Salty Plum Cafe">
             <div class="card-body">
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
-          </div>
+          </div> 
+        
+        -->
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Street Food Finder</h1>
+          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        </div>
+      </div>
 
-    </div> -->
+<!--  Carousel thanks to:
+      Andrea Rufo
+      www.andrearufo.it
+      
+           ༼ つ ◕_◕ ༽つ
+      
+      */ -->
+
+
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+        </ol>
+    
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img src="https://unsplash.it/1400/600?image=114">
+          </div>
+          <div class="item">
+            <img src="https://unsplash.it/1400/600?image=62">
+          </div>
+          <div class="item">
+            <img src="https://unsplash.it/1400/600?image=315">
+          </div>
+          <div class="item">
+            <img src="https://unsplash.it/1400/600?image=622">
+          </div>
+          <div class="item">
+            <img src="https://unsplash.it/1400/600?image=401">
+          </div>
+        </div>
+    
+        <!-- Controls -->
+        <!-- <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a> -->
+      </div>
+    
+    </div>
+
+
+      <br>
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -57,11 +126,27 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    <script>
+
+      $(".carousel").swipe({
+
+        swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+      
+          if (direction == 'left') $(this).carousel('next');
+          if (direction == 'right') $(this).carousel('prev');
+      
+        },
+        allowPageScroll:"vertical"
+      
+      });
+      
+    </script>
 
     <!-- google maps API (better than the one Darwin Council was using) -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmtHVjZc_Jh5Jx8WWQqZKKhbu90KwrqgE&callback=initMap">
-    </script>
-  
+    <!-- <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmtHVjZc_Jh5Jx8WWQqZKKhbu90KwrqgE&callback=initMap">
+    </script> -->
+
 
 
   </body>
