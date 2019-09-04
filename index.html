@@ -1,33 +1,38 @@
 <!doctype html>
 <html lang="en">
 
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- my local css  -->
     <link rel="stylesheet" href="./styles/main.css">
 
     <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css"
-      rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css" rel="stylesheet">
 
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="shortcut icon" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/favicon.ico">
 
 
+    <!-- crossroads js  -->
+    <script type="text/javascript" src="./scripts/signals.js"></script>
+    <script type="text/javascript" src="./scripts/hasher.js"></script>
+    <script type="text/javascript" src="./scripts/crossroads.js"></script>
+
     <!-- my local javascript file -->
     <script src="./scripts/javascript.js"></script>
+    <script src="./scripts/details.js"></script>
+
 
     <!-- manifest link -->
     <link rel="manifest" href="manifest.json">
@@ -37,9 +42,9 @@
 
     <title>Darwin Street Food Finder!</title>
 
-  </head>
+</head>
 
-  <body onload="streetFood()">
+<body onload="streetFood()">
 
 
     <!-- container for the map -->
@@ -48,20 +53,22 @@
 
     <div class="container-fluid">
 
-      <!-- this is just importing design direct from paper prototype, but for MVP a list would probably suffice -->
-      <div class="jumbotron jumbotron-fluid">
+        <!-- this is just importing design direct from paper prototype, but for MVP a list would probably suffice -->
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <a href='./index.html'>
+                    <h1 class="display-4">Street Food Finder</h1>
+                </a>
+                <p class="lead">Darwin Street Food Finder</p>
+            </div>
+        </div>
+
         <div class="container">
-          <h1 class="display-4">Street Food Finder</h1>
-          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-        </div>
-      </div>
+            <div class="row">
 
-      <div class="container">
-        <div class="row">
+            </div>
 
         </div>
-
-      </div>
     </div>
 
 
@@ -76,8 +83,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js">
     </script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/js/mdb.min.js">
     </script>
@@ -90,6 +96,6 @@
 
 
 
-  </body>
+</body>
 
 </html>
