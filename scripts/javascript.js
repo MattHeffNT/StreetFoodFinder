@@ -1,14 +1,14 @@
-// if ('serviceWorker' in navigator) {
-//     window.addEventListener('load', function() {
-//         navigator.serviceWorker.register('sw.js').then(function(registration) {
-//             // Registration was successful
-//             // console.log('ServiceWorker registration successful with scope: ', registration.scope)
-//         }, function(err) {
-//             // registration failed :(
-//             console.log('ServiceWorker registration failed: ', err)
-//         })
-//     })
-// }
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('sw.js').then(function(registration) {
+            // Registration was successful
+            // console.log('ServiceWorker registration successful with scope: ', registration.scope)
+        }, function(err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err)
+        })
+    })
+}
 
 // This function pulls in the JSON file from Darwin City council then gives each business object a variable ooh and I just figured out template literals too so now they displaying data
 // dynamically.
