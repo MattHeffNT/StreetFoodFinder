@@ -55,7 +55,7 @@ function streetFood() {
                           <!-- Title -->
                           <h4 class="card-title">${vendorName}</h4>
                           <!-- Text -->
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <p class="card-text"></p>
 
                         </div>
 
@@ -64,17 +64,3 @@ function streetFood() {
             }
         })
 }
-
-// get user location
-// navigator.geolocation.getCurrentPosition(
-//     function(position) {
-//         console.log('Success', position)
-//         console.log(position.coords.longitude)
-//     },
-//     function(err) {
-//         console.error('Error', err)
-//     }
-// )
-
-// now i can write some code  below to extract vendor long/lat then code to work out distance between user, thinking that
-// I may need to import the arcgis map into Google Maps API though.

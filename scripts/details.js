@@ -25,52 +25,34 @@ function details() {
                 <li><strong>Website: </strong><a href=${vendorWeb}>${vendorWeb}</a></li>
                 </ul>
                 `
-
-
-
             navigator.geolocation.getCurrentPosition(
-                    // get user location
-                    function(position) {
+                // get user location
+                function(position) {
 
 
-                        latlng = new L.LatLng(position.coords.latitude, position.coords.longitude)
-                        console.log(vendorLat)
-                            //console.log('this is the user poisiton ' + latlng)
+                    latlng = new L.LatLng(position.coords.latitude, position.coords.longitude)
+                    console.log(vendorLat)
+                        //console.log('this is the user poisiton ' + latlng)
 
 
-                        // leaflet Map
-                        var mymap = L.map('mapid').setView([vendorLat, vendorLong], 13);
-                        var markerUser = L.marker(latlng).addTo(mymap)
-                        var markerVendor = L.marker([vendorLat, vendorLong]).addTo(mymap)
-                            .bindPopup(`${vendorName}`).openPopup();
+                    // leaflet Map
+                    var mymap = L.map('mapid').setView([vendorLat, vendorLong], 13);
+                    var markerUser = L.marker(latlng).addTo(mymap)
+                    var markerVendor = L.marker([vendorLat, vendorLong]).addTo(mymap)
+                        .bindPopup(`${vendorName}`).openPopup();
 
-                        const attribution =
-                            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
-                        const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-                        const tiles = L.tileLayer(tileUrl, { attribution });
+                    const attribution =
+                        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+                    const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+                    const tiles = L.tileLayer(tileUrl, { attribution });
 
-                        tiles.addTo(mymap)
+                    tiles.addTo(mymap)
 
-                    },
-                    function(err) {
-                        console.error('Error', err)
-                    }
-                )
-                // leaflet Map
-                //   console.log('vendor location: ' + vendorLat + ' ' + vendorLong)
-                //   console.log('this is the user poisiton ' + latlng)
+                },
+                function(err) {
+                    console.error('Error', err)
+                }
+            )
 
-            //   var mymap = L.map('mapid').setView(vendorLat, vendorLong, 13)
-
-            //   var markerUser = L.marker(latlng).addTo(mymap)
-
-            //   var markerVendor = L.marker(vendorLat, vendorLong)
-
-            //   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-            //     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            //     maxZoom: 18,
-            //     id: 'mapbox.streets',
-            //     accessToken: 'pk.eyJ1IjoibWF0dGhlZmZudCIsImEiOiJjazA2YmM4bGowMmg4M21xcWVzb2Y3eW8wIn0.1ukk1zb7tzGLn7v6hfbF5g'
-            //   }).addTo(mymap)
         })
 }

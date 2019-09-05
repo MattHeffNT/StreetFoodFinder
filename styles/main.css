@@ -20,8 +20,6 @@
         width: 100%;
         margin-bottom: 1em;
         /* The width is the width of the web page */
-        /* border-style: solid;
-        border-width: 3px; */
     }
     .embed-container {
         position: relative;
@@ -55,7 +53,6 @@ body {
 
 #mapid {
     height: 180px;
-    /* background-color: gray; */
 }
 
 iframe {
@@ -99,14 +96,3 @@ small {
     bottom: 0;
     margin-bottom: -15px;
 }
-
-.container-fluid {
-    /* background-color: var(--container-color); */
-    /* margin-top: 0.4em; */
-}
-
-.container {
-    /* overflow:scroll !important; */
-}
-
-.col-sm {}
