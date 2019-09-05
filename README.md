@@ -7,11 +7,11 @@ Using the Google Maps API and Browser user location, this app will provide users
 details about street food vendors near their current location
 
 <strong>Libraries/Frameworks used:</strong>
-
-https://unsplash.com (images)
-https://mdbootstrap.com Material Design for Bootstrap 
-https://leafletjs.com Leaflet js maps
-http://open-darwin.opendata.arcgis.com/search?tags=Food Darwin City Council Open Data 
-
+<ul>
+<li> https://unsplash.com (images) <li>
+<li> https://mdbootstrap.com Material Design for Bootstrap </li>
+<li> https://leafletjs.com Leaflet js maps </li>
+<li> http://open-darwin.opendata.arcgis.com/search?tags=Food Darwin City Council Open Data </li>
+</ul>
 
 
