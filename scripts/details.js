@@ -5,22 +5,21 @@ function details() {
         // Get JSON object from request
         .then((response) => response.json())
         .then((data) => {
-            for (let i = 0; i < data.features.length; i++) {
-                // check for and remove duplicates
+            var i = localStorage.getItem('key');
 
-                if (data.features[i].properties.Name == data.features[i + 1].properties.Name) {
-                    // if it matches, this specific item should be skipped
 
-                } else {
-                    // put code in here.
-                    var vendorName = data.features[i].properties.Name
-                    document.querySelector('.display-4').innerHTML = `${vendorName}`
+            data.features[i].properties.Name
+                // if it matches, this specific item should be skipped
+            var vendorName = data.features[i].properties.Name
+            document.querySelector('.display-4').innerHTML = `${vendorName}`
 
-                    // Append vendors as card view with placeholder images in container
-                }
-            }
+            // Append vendors as card view with placeholder images in container
         })
-};
+}
+
+
+
+
 
 // get user location
 // navigator.geolocation.getCurrentPosition(
