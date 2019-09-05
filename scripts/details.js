@@ -22,7 +22,7 @@ function details() {
             document.getElementById('body-container').innerHTML = `<ul style="list-style:none;">
                <li><strong> Location: </strong>${vendorLocation}</li>
                 <li><strong> Opening Hours: </strong>${vendorHours}</li>
-                <li><strong>Website: </strong><a href=${vendorWeb}>${vendorWeb}</a></li>
+                <li><a href=${vendorWeb}>${vendorWeb}</a></li>
                 </ul>
                 `
             navigator.geolocation.getCurrentPosition(
@@ -31,7 +31,7 @@ function details() {
 
 
                     latlng = new L.LatLng(position.coords.latitude, position.coords.longitude)
-                    console.log(vendorLat)
+                    console.log(latlng)
                         //console.log('this is the user poisiton ' + latlng)
 
 

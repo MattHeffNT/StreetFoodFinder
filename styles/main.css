@@ -41,10 +41,32 @@
 }
 
 
+/* iphone 5 and smaller view */
+
+
+/* @media only screen and (max-width: 320px) {
+    body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 1em;
+    }
+    .container-fluid {
+        justify-content: center;
+        text-align: center;
+    }
+} */
+
+
 /* Mobile view */
 
 body {
     margin-top: 1em;
+    overflow-x: hidden;
+    position: relative
+}
+
+ul {
+    padding-left: 0em !important;
 }
 
 #body-container {
@@ -95,4 +117,9 @@ small {
     z-index: 40;
     bottom: 0;
     margin-bottom: -15px;
+}
+
+.jumbotron {
+    padding: 0 !important;
+    text-align: center;
 }
