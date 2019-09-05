@@ -27,9 +27,6 @@ function streetFood() {
                     // if it matches, this specific item should be skipped
 
                 } else {
-
-
-
                     // put code in here.
                     var vendorName = data.features[i].properties.Name
                     document.querySelector('.container').innerHTML +=
@@ -63,19 +60,10 @@ function streetFood() {
                         </div>
 
                       </div>`
-
-
-
                 }
-
-
             }
-
-
         })
 }
-
-
 
 // get user location
 // navigator.geolocation.getCurrentPosition(
