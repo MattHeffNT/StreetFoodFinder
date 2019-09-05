@@ -9,19 +9,19 @@
     body {
         display: grid;
         /* max-width: 1080px; */
-        width: 
-        margin: 0 auto;
+        width: margin: 0 auto;
         grid-gap: 1px;
         grid-template-columns: repeat(3, 1fr);
         margin-top: 1em;
     }
-    #map {
-        height: 50%;
+    #mapid {
+        height: 180px;
         /* The height is 400 pixels */
         width: 100%;
+        margin-bottom: 1em;
         /* The width is the width of the web page */
-        border-style: solid;
-        border-width: 3px;
+        /* border-style: solid;
+        border-width: 3px; */
     }
     .embed-container {
         position: relative;
@@ -30,8 +30,6 @@
         max-width: 100%;
         grid-column: 2;
     }
-
-
     .container-fluid {
         grid-column: 2;
         justify-content: center;
@@ -49,6 +47,15 @@
 
 body {
     margin-top: 1em;
+}
+
+#body-container {
+    text-align: left;
+}
+
+#mapid {
+    height: 180px;
+    /* background-color: gray; */
 }
 
 iframe {
@@ -74,7 +81,6 @@ iframe {
     padding-bottom: 80%;
     height: 0;
     max-width: 100%;
-
 }
 
 .embed-container iframe,
@@ -102,6 +108,5 @@ small {
 .container {
     /* overflow:scroll !important; */
 }
-.col-sm {
-    
-}
+
+.col-sm {}

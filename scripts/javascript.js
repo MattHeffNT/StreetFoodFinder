@@ -78,12 +78,3 @@ function streetFood() {
 
 // now i can write some code  below to extract vendor long/lat then code to work out distance between user, thinking that
 // I may need to import the arcgis map into Google Maps API though.
-
-// google map api key AIzaSyBmtHVjZc_Jh5Jx8WWQqZKKhbu90KwrqgE
-// var map
-// function initMap () {
-//   map = new google.maps.Map(document.getElementById('map'), {
-//     center: { lat: -34.397, lng: 150.644 },
-//     zoom: 8
-//   })
-// }
