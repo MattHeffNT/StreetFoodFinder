@@ -5,8 +5,8 @@ function details() {
         // Get JSON object from request
         .then((response) => response.json())
         .then((data) => {
-            var i = localStorage.getItem('key');
 
+            var i = sessionStorage.getItem('key')
 
             data.features[i].properties.Name
                 // if it matches, this specific item should be skipped
@@ -16,10 +16,6 @@ function details() {
             // Append vendors as card view with placeholder images in container
         })
 }
-
-
-
-
 
 // get user location
 // navigator.geolocation.getCurrentPosition(
