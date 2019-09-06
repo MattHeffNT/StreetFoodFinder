@@ -46,7 +46,7 @@ function streetFood() {
                           <img class="card-img-top" src="https://source.unsplash.com/collection/139608/544x362/?${[i]}" alt="Card image">
                           <a href="./details.html" onclick = " sessionStorage.setItem('key', '${[i]}'); ">
                             <div class="mask rgba-white-slight"></div>
-                          </a>
+                          
                         </div>
 
                         <!-- Card content -->
@@ -58,7 +58,7 @@ function streetFood() {
                           <p class="card-text"></p>
 
                         </div>
-
+                        </a>
                       </div>`
                 }
             }
