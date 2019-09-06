@@ -39,9 +39,9 @@
 }
 
 
-/* iphone 5 and smaller width */
+/* width fix general */
 
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 1440px) {
     .display-4 {
         font-size: 2.5rem !important;
     }
