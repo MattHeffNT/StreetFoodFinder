@@ -3,8 +3,8 @@ Darwin Street food app
 
  https://mattheffnt.github.io/StreetFoodFinder
 
-Using the Google Maps API and Browser user location, this app will provide users with
-details about street food vendors near their current location
+Using Leaflet js, Browser user location, and the Darwin City Council Open Data API, this app will provide users with
+details about street food vendors near their current location.
 
 <strong>Libraries/Frameworks used:</strong>
 <ul>
