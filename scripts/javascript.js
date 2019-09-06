@@ -29,7 +29,7 @@ function streetFood() {
                 } else {
                     // put code in here.
                     var vendorName = data.features[i].properties.Name
-                    document.querySelector('.container').innerHTML +=
+                    document.querySelector('.container-fluid').innerHTML +=
 
                         // Append vendors as card view with placeholder images in container
 

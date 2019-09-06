@@ -22,7 +22,11 @@ function details() {
             document.getElementById('body-container').innerHTML = `<ul style="list-style:none;">
                <li><strong> Location: </strong>${vendorLocation}</li>
                 <li><strong> Opening Hours: </strong>${vendorHours}</li>
-                <li><a href=${vendorWeb}>${vendorWeb}</a></li>
+                
+                <li style="text-align:center;"><a class="btn btn-primary" href=${vendorWeb} role="button">Website</a></li>
+                
+
+
                 </ul>
                 `
             navigator.geolocation.getCurrentPosition(
