@@ -1,72 +1,70 @@
-// if ('serviceWorker' in navigator) {
-//     window.addEventListener('load', function() {
-//         navigator.serviceWorker.register('sw.js').then(function(registration) {
-//             // Registration was successful
-//             console.log('ServiceWorker registration successful with scope: ', registration.scope)
-//         }, function(err) {
-//             // registration failed :(
-//             console.log('ServiceWorker registration failed: ', err)
-//         })
-//     })
-// }
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('sw.js').then(function(registration) {
+            // Registration was successful
+            // console.log('ServiceWorker registration successful with scope: ', registration.scope)
+        }, function(err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err)
+        })
+    })
+}
 
-// This function pulls in the JSON file from Darwin City council then gives each business object a variable ooh and I just figured out template literals too so now they displaying data
-// dynamically.
-
-
+// user location
 navigator.geolocation.watchPosition(
     // get user location
     function(position) {
+        lat = position.coords.latitude;
+        long = position.coords.longitude;
+        console.log(lat);
+    });
 
+// console.log('this is the user poisiton ' + latlng)
 
-        lat = position.coords.latitude
-        long = position.coords.longitude
-        console.log(lat)
-
-
-    })
-
-//console.log('this is the user poisiton ' + latlng)
+// google maps code
 
 function initAutocomplete() {
     var map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: lat, lng: long },
+        center: {
+            lat: lat,
+            lng: long
+        },
         zoom: 13,
         mapTypeId: 'roadmap',
         disableDefaultUI: true
     })
 
     // Create the search box and link it to the UI element.
-    var input = document.getElementById('pac-input')
-    var searchBox = new google.maps.places.SearchBox(input)
-    map.controls[google.maps.ControlPosition.TOP_CENTER].push(input)
+    var input = document.getElementById('pac-input');
+    var searchBox = new google.maps.places.SearchBox(input);
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
     // Bias the SearchBox results towards current map's viewport.
     map.addListener('bounds_changed', function() {
-        searchBox.setBounds(map.getBounds())
-    })
+        searchBox.setBounds(map.getBounds());
+    });
 
-    var markers = []
-        // Listen for the event fired when the user selects a prediction and retrieve
-        // more details for that place.
+    var markers = [];
+    // Listen for the event fired when the user selects a prediction and retrieve
+    // more details for that place.
     searchBox.addListener('places_changed', function() {
-        var places = searchBox.getPlaces()
+        var places = searchBox.getPlaces();
 
         if (places.length == 0) {
-            return
+            return;
         }
 
         // Clear out the old markers.
         markers.forEach(function(marker) {
-            marker.setMap(null)
-        })
-        markers = []
+            marker.setMap(null);
+        });
+        markers = [];
 
         // For each place, get the icon, name and location.
-        var bounds = new google.maps.LatLngBounds()
+        var bounds = new google.maps.LatLngBounds();
         places.forEach(function(place) {
             if (!place.geometry) {
-                console.log('Returned place contains no geometry')
+                console.log("Returned place contains no geometry");
                 return;
             }
             var icon = {
@@ -75,7 +73,7 @@ function initAutocomplete() {
                 origin: new google.maps.Point(0, 0),
                 anchor: new google.maps.Point(17, 34),
                 scaledSize: new google.maps.Size(25, 25)
-            }
+            };
 
             // Create a marker for each place.
             markers.push(new google.maps.Marker({
@@ -83,17 +81,17 @@ function initAutocomplete() {
                 icon: icon,
                 title: place.name,
                 position: place.geometry.location
-            }))
+            }));
 
             if (place.geometry.viewport) {
                 // Only geocodes have viewport.
-                bounds.union(place.geometry.viewport)
+                bounds.union(place.geometry.viewport);
             } else {
-                bounds.extend(place.geometry.location)
+                bounds.extend(place.geometry.location);
             }
-        })
-        map.fitBounds(bounds)
-    })
+        });
+        map.fitBounds(bounds);
+    });
 }
 
 function streetFood() {
