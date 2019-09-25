@@ -29,6 +29,10 @@
     .row {
         justify-content: center;
     }
+    #pac-input {
+        width: 22vw;
+        top: 7px !important;
+    }
 }
 
 
@@ -104,11 +108,18 @@ small {
     text-align: center;
 }
 
+i {
+    font-size: 3rem;
+    /* color: red; */
+    margin-left: 0.5em;
+}
+
 
 /* Google map styles */
 
 #map {
     height: 50vh;
+    margin-top: 2vh;
 }
 
 
@@ -174,7 +185,9 @@ body {
     margin-left: 12px;
     padding: 0 11px 0 13px;
     text-overflow: ellipsis;
-    width: 80vw;
+    width: 65vw;
+    top: 7px;
+    margin-top: 0.5rem;
 }
 
 
