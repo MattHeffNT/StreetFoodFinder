@@ -1,38 +1,36 @@
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('sw.js').then(function(registration) {
-            // Registration was successful
-            // console.log('ServiceWorker registration successful with scope: ', registration.scope)
-        }, function(err) {
-            // registration failed :(
-            console.log('ServiceWorker registration failed: ', err)
-        })
-    })
-}
+// if ('serviceWorker' in navigator) {
+//     window.addEventListener('load', function() {
+//         navigator.serviceWorker.register('sw.js').then(function(registration) {
+//             // Registration was successful
+//             // console.log('ServiceWorker registration successful with scope: ', registration.scope)
+//         }, function(err) {
+//             // registration failed :(
+//             console.log('ServiceWorker registration failed: ', err)
+//         })
+//     })
+// }
 
 // user location
-navigator.geolocation.watchPosition(
-    // get user location
-    function(position) {
-        lat = position.coords.latitude;
-        long = position.coords.longitude;
-        console.log(lat);
-    });
 
-// console.log('this is the user poisiton ' + latlng)
 
-// google maps code
-
+// google maps code .....make sure to put placeholder here
+// for if the browser/app is offline.
 function initAutocomplete() {
     var map = new google.maps.Map(document.getElementById('map'), {
-        center: {
-            lat: lat,
-            lng: long
-        },
+        center: { lat: -12.4634, lng: 130.8456 },
         zoom: 13,
-        mapTypeId: 'roadmap',
-        disableDefaultUI: true
-    })
+        mapTypeId: 'roadmap'
+            // disableDefaultUI: true
+    });
+
+    navigator.geolocation.watchPosition(
+        // get user location
+        function(position) {
+            lat = position.coords.latitude
+            long = position.coords.longitude
+        })
+
+
 
     // Create the search box and link it to the UI element.
     var input = document.getElementById('pac-input');
@@ -93,6 +91,7 @@ function initAutocomplete() {
         map.fitBounds(bounds);
     });
 }
+
 
 function streetFood() {
     var url = 'https://opendata.arcgis.com/datasets/f62cbfbf11494495984097ef8ed6a8a9_0.geojson'
