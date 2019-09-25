@@ -26,11 +26,13 @@
     <script src="./scripts/javascript.js"></script>
     <script src="./scripts/details.js"></script>
 
-    <!-- leaflet css+js -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+    <!-- google map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8tSPVnfotd81PYjcTNRe71mcTVBT3TdU&libraries=places&callback=initAutocomplete" async defer></script>
 
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmtHVjZc_Jh5Jx8WWQqZKKhbu90KwrqgE&libraries=places" async defer></script> -->
+
+
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
     <!-- manifest link -->
     <link rel="manifest" href="manifest.json">
@@ -44,23 +46,24 @@
 
 <body onload="streetFood()">
 
+
+
     <div class="container-fluid">
 
-        <!-- this is just importing design direct from paper prototype, but for MVP a list would probably suffice -->
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                <a href='./index.html'>
-                    <h1 class="display-4">Street Food Finder</h1>
-                </a>
+
+                <h1 class="display-4">Street Food Finder</h1>
+
                 <p class="lead">Darwin Street Food Finder</p>
             </div>
         </div>
 
-        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-
+        <input id="pac-input" class="controls" type="text" placeholder="Search">
         <div id="map"></div>
 
-        <div class="container-fluid">
+
+        <div class="container-fluid" id="VendorList">
             <div class="row">
 
             </div>
@@ -72,8 +75,7 @@
 
     </div>
 
-    <!-- google maps -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmtHVjZc_Jh5Jx8WWQqZKKhbu90KwrqgE&libraries=places&callback=initAutocomplete" async defer></script>
+
 
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
