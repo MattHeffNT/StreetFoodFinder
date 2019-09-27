@@ -22,14 +22,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/favicon.ico">
 
+
+    <!-- swiper js/css -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+
+    <!-- ejs -->
+    <script src="ejs.js"></script>
+
     <!-- my local javascript file -->
     <script src="./scripts/javascript.js"></script>
     <script src="./scripts/details.js"></script>
-
-    <!-- google map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8tSPVnfotd81PYjcTNRe71mcTVBT3TdU&libraries=places&callback=initAutocomplete" async defer></script>
-
-
 
     <!-- font awesome icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
@@ -59,19 +61,8 @@
             </div>
         </div>
 
-        <input id="pac-input" class="controls" type="text" placeholder="Search">
-        <div id="map"></div>
+        <div class="container-fluid" id="vendors"></div>
 
-
-        <div class="container-fluid" id="VendorList">
-            <div class="row">
-
-            </div>
-
-        </div>
-    </div>
-
-    </div>
 
     </div>
 
@@ -88,7 +79,21 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/js/mdb.min.js">
     </script>
 
+    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
 
+    <!-- swiper initialize -->
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            slidesPerView: '3',
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+        });
+    </script>
 </body>
 
 </html>
