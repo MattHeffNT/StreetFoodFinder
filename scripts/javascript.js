@@ -18,7 +18,7 @@ function Fade() {
 }
 
 function streetFood() {
-    var url = 'http://open-darwin.opendata.arcgis.com/datasets/6d6453a83bbc4ab8b7591e545dd40d65_0.geojson'
+    var url = 'https://open-darwin.opendata.arcgis.com/datasets/6d6453a83bbc4ab8b7591e545dd40d65_0.geojson'
 
     // Send request to server
     fetch(url)
