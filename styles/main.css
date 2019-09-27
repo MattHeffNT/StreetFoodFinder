@@ -3,19 +3,12 @@
 @media only screen and (min-width: 800px) {
     body {
         display: grid;
-        /* max-width: 1080px; */
         width: margin: 0 auto;
         grid-gap: 1px;
         grid-template-columns: repeat(3, 1fr);
         margin-top: 1em;
-        /* add fade effect */
-    }
-    .embed-container {
-        position: relative;
-        padding-bottom: 80%;
-        height: 0;
-        max-width: 100%;
-        grid-column: 2;
+        opacity: 0;
+        transition: 1s;
     }
     .container-fluid {
         grid-column: 2;
@@ -25,14 +18,8 @@
     .row {
         justify-content: center;
     }
-    #pac-input {
-        position: absolute;
-        left: 70px;
-        top: 0px;
-        background-color: white;
-        width: 20vw !important;
-        padding-left: 10px;
-        margin-top: 5px;
+    .card {
+        width: 75% !important;
     }
 }
 
@@ -43,15 +30,6 @@
     .display-4 {
         font-size: 2.5rem !important;
     }
-    #pac-input {
-        position: absolute;
-        left: 70px;
-        top: 0px;
-        background-color: white;
-        width: 20vw;
-        padding-left: 10px;
-        margin-top: 10px;
-    }
 }
 
 
@@ -60,7 +38,9 @@
 body {
     margin-top: 1em;
     overflow-x: hidden;
-    position: relative
+    position: relative;
+    opacity: 0;
+    transition: 1s;
 }
 
 ul {
@@ -71,10 +51,8 @@ ul {
     text-align: left;
 }
 
-iframe {
-    border: 0;
-    height: 20em;
-    width: 100%;
+.display-4 {
+    font-size: 2.5rem !important;
 }
 
 #searchbar {
@@ -86,7 +64,13 @@ iframe {
 
 .card {
     margin-top: 2em;
-    margin-bottom: 1.2em
+    margin-bottom: 1.2em;
+    /* width: 50% !important; */
+}
+
+.card-title {
+    color: #776e6e;
+    font-size: 16px;
 }
 
 .embed-container {
@@ -124,12 +108,17 @@ i {
     margin-left: 0.5em;
 }
 
+.btn {
+    margin-top: 4vh !important;
+}
+
 
 /* Google map styles */
 
 #map {
     height: 50vh;
     margin-top: 2vh;
+    background-color: red !important;
 }
 
 
