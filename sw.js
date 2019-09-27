@@ -6,7 +6,7 @@ var urlsToCache = [
     'scripts/javascript.js',
     'index.html',
     'details.html',
-    'details.js'
+    'scripts/details.js'
 ]
 
 self.addEventListener('install', function(event) {
