@@ -10,6 +10,7 @@ if ('serviceWorker' in navigator) {
     })
 }
 
+// had this here just for a cool fade effect while elements load in, definitely need to fix up later
 setTimeout(Fade, 1000)
 
 function Fade() {
@@ -17,22 +18,27 @@ function Fade() {
 }
 
 function streetFood() {
-    var url = 'https://opendata.arcgis.com/datasets/f62cbfbf11494495984097ef8ed6a8a9_0.geojson'
-        // Send request to server
+    var url = 'http://open-darwin.opendata.arcgis.com/datasets/6d6453a83bbc4ab8b7591e545dd40d65_0.geojson'
+
+    // Send request to server
     fetch(url)
         // Get JSON object from request
         .then((response) => response.json())
         .then((data) => {
+
             for (let i = 0; i < data.features.length; i++) {
+
+
+
                 // check for and remove duplicates
 
-                if (data.features[i].properties.Name == data.features[i + 1].properties.Name) {
+                if (data.features[i].properties.BusinessName == data.features[i + 1].properties.BusinessName) {
                     // if it matches, this specific item should be skipped
 
                 } else {
                     // put code in here.
 
-                    var vendorName = data.features[i].properties.Name
+                    var vendorName = data.features[i].properties.BusinessName
                     document.querySelector('#vendors').innerHTML +=
 
                         ` 
