@@ -1,25 +1,14 @@
-:root {
-    --container-color: rgba(54, 135, 215, 0.38);
-}
-
-
 /* Desktop display media query (just for testing purposes) */
 
 @media only screen and (min-width: 800px) {
     body {
         display: grid;
-        /* max-width: 1080px; */
         width: margin: 0 auto;
         grid-gap: 1px;
         grid-template-columns: repeat(3, 1fr);
         margin-top: 1em;
-    }
-    .embed-container {
-        position: relative;
-        padding-bottom: 80%;
-        height: 0;
-        max-width: 100%;
-        grid-column: 2;
+        opacity: 0;
+        transition: 1s;
     }
     .container-fluid {
         grid-column: 2;
@@ -29,9 +18,8 @@
     .row {
         justify-content: center;
     }
-    #pac-input {
-        width: 22vw;
-        top: 7px !important;
+    .card {
+        width: 75% !important;
     }
 }
 
@@ -50,7 +38,9 @@
 body {
     margin-top: 1em;
     overflow-x: hidden;
-    position: relative
+    position: relative;
+    opacity: 0;
+    transition: 1s;
 }
 
 ul {
@@ -61,10 +51,8 @@ ul {
     text-align: left;
 }
 
-iframe {
-    border: 0;
-    height: 20em;
-    width: 100%;
+.display-4 {
+    font-size: 2.5rem !important;
 }
 
 #searchbar {
@@ -76,7 +64,13 @@ iframe {
 
 .card {
     margin-top: 2em;
-    margin-bottom: 1.2em
+    margin-bottom: 1.2em;
+    /* width: 50% !important; */
+}
+
+.card-title {
+    color: #776e6e;
+    font-size: 16px;
 }
 
 .embed-container {
@@ -114,23 +108,21 @@ i {
     margin-left: 0.5em;
 }
 
+.btn {
+    margin-top: 4vh !important;
+}
+
 
 /* Google map styles */
 
 #map {
     height: 50vh;
     margin-top: 2vh;
+    background-color: red !important;
 }
 
 
 /* Optional: Makes the sample page fill the window. */
-
-html,
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
 
 #description {
     font-family: Roboto;
@@ -185,15 +177,14 @@ body {
     margin-left: 12px;
     padding: 0 11px 0 13px;
     text-overflow: ellipsis;
-    width: 65vw;
-    top: 7px;
-    margin-top: 0.5rem;
+    width: 60vw;
+    padding-left: 10px;
+    margin-top: 10px;
 }
 
-
-/* #pac-input:focus {
+#pac-input:focus {
     border-color: #4d90fe;
-} */
+}
 
 #title {
     color: #fff;
