@@ -9,6 +9,7 @@ Using Google Maps (with Directions API), Browser user location, and the Darwin C
 <ul>
 <li> https://unsplash.com (images) </li>
 <li> https://mdbootstrap.com Material Design for Bootstrap </li>
+<li> Google Maps API with directions API</li>
 <li> http://open-darwin.opendata.arcgis.com/search?tags=Food Darwin City Council Open Data </li>
 </ul>
 
