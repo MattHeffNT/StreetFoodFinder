@@ -30,7 +30,6 @@ function streetFood() {
 
 
 
-
                 var vendor = data.features[i].properties.BusinessName
                 // so for some reason it isn't picking up duplicates with an if function, need to check that it's iterating
                 //through the data correctly

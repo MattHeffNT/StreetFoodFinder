@@ -1,9 +1,10 @@
-function details() {
-  var url = 'https://open-darwin.opendata.arcgis.com/datasets/6d6453a83bbc4ab8b7591e545dd40d65_0.geojson'
+
 
   // Send request to server
   fetch(url)
-    // Get JSON object from request
+
+  // Get JSON object from request
+
     .then((response) => response.json())
     .then((data) => {
       var i = sessionStorage.getItem('key')
@@ -17,10 +18,9 @@ function details() {
       var vendorWeb = data.features[i].properties.Website
       var vendorLat = data.features[i].geometry.coordinates[1]
       var vendorLong = data.features[i].geometry.coordinates[0]
-      var vendorLatLng = {
-        lat: vendorLat,
-        lng: vendorLong
-      }
+
+      var vendorLatLng = { lat: vendorLat, lng: vendorLong }
+
 
       document.querySelector('.display-4').innerHTML = `
                 ${vendorName}
@@ -35,7 +35,7 @@ function details() {
                 </ul>
                 `
     })
-}
+
 
 function initMap() {
 
