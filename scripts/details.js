@@ -1,5 +1,5 @@
 
-
+function details () {
   // Send request to server
   fetch(url)
 
@@ -35,7 +35,7 @@
                 </ul>
                 `
     })
-
+  }
 
 function initMap() {
 
