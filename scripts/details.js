@@ -1,6 +1,7 @@
 
 function details () {
   // Send request to server
+  var url = 'https://open-darwin.opendata.arcgis.com/datasets/6d6453a83bbc4ab8b7591e545dd40d65_0.geojson'
   fetch(url)
 
   // Get JSON object from request
