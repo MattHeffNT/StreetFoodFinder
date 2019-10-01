@@ -30,13 +30,35 @@ function streetFood() {
 
 
 
+
+                var vendor = data.features[i].properties.BusinessName
+                // so for some reason it isn't picking up duplicates with an if function, need to check that it's iterating
+                //through the data correctly
+                
+                if (vendor == "Ken’s Crepes Mindil") {
+                  
+                  //vendor = "Ken's Crepes Mindil"
+                  var KCM = [i]
+        
+                  data.features[KCM].properties.BusinessName = "Ken's Crepes Mindil"
+                          
+                }
+                else {
+                  
+                  if (vendor == "Noi Pad Thai") {
+                    
+                    var NPT= [i]
+                              
+                    data.features[NPT].properties.BusinessName = "Noi Pad Thai"
+                    
+                  }
+                  else {
+                    
+                    
+                    // chuck all the code in here
+                    
+                  
                 // check for and remove duplicates
-
-                if (data.features[i].properties.BusinessName == data.features[i + 1].properties.BusinessName) {
-                    // if it matches, this specific item should be skipped
-
-                } else {
-                    // put code in here.
 
                     var vendorName = data.features[i].properties.BusinessName
                     document.querySelector('#vendors').innerHTML +=
@@ -67,5 +89,5 @@ function streetFood() {
                         `
                 }
             }
-        })
+        }})
 }
