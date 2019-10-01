@@ -55,7 +55,7 @@ function streetFood() {
                   else {
                     
                     
-                    // chuck all the code in here
+                // chuck all the code in here
                     
                   
                 // check for and remove duplicates
