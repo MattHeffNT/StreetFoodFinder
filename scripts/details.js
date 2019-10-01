@@ -1,9 +1,10 @@
-function details () {
-  var url = 'https://open-darwin.opendata.arcgis.com/datasets/6d6453a83bbc4ab8b7591e545dd40d65_0.geojson'
+
 
   // Send request to server
   fetch(url)
+
   // Get JSON object from request
+
     .then((response) => response.json())
     .then((data) => {
       var i = sessionStorage.getItem('key')
@@ -17,7 +18,9 @@ function details () {
       var vendorWeb = data.features[i].properties.Website
       var vendorLat = data.features[i].geometry.coordinates[1]
       var vendorLong = data.features[i].geometry.coordinates[0]
+
       var vendorLatLng = { lat: vendorLat, lng: vendorLong }
+
 
       document.querySelector('.display-4').innerHTML = `
                 ${vendorName}
@@ -31,6 +34,51 @@ function details () {
                 
                 </ul>
                 `
+    })
+}
+
+function initMap() {
+
+
+  var url = 'https://open-darwin.opendata.arcgis.com/datasets/6d6453a83bbc4ab8b7591e545dd40d65_0.geojson'
+
+  // Send request to server
+  fetch(url)
+    // Get JSON object from request
+    .then((response) => response.json())
+    .then((data) => {
+      var i = sessionStorage.getItem('key')
+
+      // put JSON properties into variables for easier use
+      var vendorLat = data.features[i].geometry.coordinates[1]
+      var vendorLong = data.features[i].geometry.coordinates[0]
+      var vendorLatLng = {
+        lat: vendorLat,
+        lng: vendorLong
+      }
+
+      var navOptions = {
+        enableHighAccuracy: true,
+        timeout: 5000
+      }
+
+      function nothing() {
+        console.log('literally nothing')
+      }
+      navigator.geolocation.getCurrentPosition(Position, nothing, navOptions)
+
+      // get user location
+      function Position(position) {
+        lat = position.coords.latitude
+        long = position.coords.longitude
+
+
+        // directions API
+
+        var userLatLng = {
+          lat: lat,
+          lng: long
+        }
 
       if (navigator.geolocation) {
         navigator.geolocation.watchPosition(
@@ -50,11 +98,14 @@ function details () {
 
         // directions API
 
+
         var origin = new google.maps.LatLng(lat, long) // place user location here
         var destination = new google.maps.LatLng(vendorLat, vendorLong) // vendor location
 
         var directionsService = new google.maps.DirectionsService()
-        var directionsRenderer = new google.maps.DirectionsRenderer()
+        // added option to get rid of default markers with directions api
+        var directionsRenderer = new google.maps.DirectionsRenderer();
+
 
         var mapOptions = {
           zoom: 14,
@@ -62,16 +113,25 @@ function details () {
           disableDefaultUI: true
         }
 
+
         var map = new google.maps.Map(document.getElementById('map'), mapOptions)
-        console.log("added map")
+        //console.log("added map")
 
         directionsRenderer.setMap(map)
 
-        var origin = new google.maps.LatLng({ lat: lat, lng: long }) // place user location here
-        var destination = new google.maps.LatLng({ lat: vendorLat, lng: vendorLong }) // vendor location
+        var origin = new google.maps.LatLng({
+          lat: lat,
+          lng: long
+        }) // place user location here
+        var destination = new google.maps.LatLng({
+          lat: vendorLat,
+          lng: vendorLong
+        }) // vendor location
 
         calcRoute()
-        function calcRoute () {
+
+        function calcRoute() {
+
           var request = {
             origin: origin,
             destination: destination,
@@ -84,14 +144,8 @@ function details () {
           })
         }
       }
-    
-    function displayError (error) {
-      var errors = {
-        1: 'Permission denied',
-        2: 'Position unavailable',
-        3: 'Request timeout'
-      }
-      window.alert('Error: ' + errors[error.code] + ' you will need to enable location if you want to use this app to the full')
-    }
-  })
+
+
+    })
+
 }

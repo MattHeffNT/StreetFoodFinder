@@ -4,8 +4,10 @@ var CACHE_NAME = CACHE_TITLE + '-' + CACHE_VERSION
 var urlsToCache = [
   'styles/main.css',
   'scripts/javascript.js',
-  'index.html'
 
+  'index.html',
+  'details.html',
+  'scripts/details.js'
 ]
 
 self.addEventListener('install', function (event) {
