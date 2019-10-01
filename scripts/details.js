@@ -1,9 +1,10 @@
-function details() {
-  var url = 'https://open-darwin.opendata.arcgis.com/datasets/6d6453a83bbc4ab8b7591e545dd40d65_0.geojson'
+
 
   // Send request to server
   fetch(url)
-    // Get JSON object from request
+
+  // Get JSON object from request
+
     .then((response) => response.json())
     .then((data) => {
       var i = sessionStorage.getItem('key')
@@ -17,10 +18,9 @@ function details() {
       var vendorWeb = data.features[i].properties.Website
       var vendorLat = data.features[i].geometry.coordinates[1]
       var vendorLong = data.features[i].geometry.coordinates[0]
-      var vendorLatLng = {
-        lat: vendorLat,
-        lng: vendorLong
-      }
+
+      var vendorLatLng = { lat: vendorLat, lng: vendorLong }
+
 
       document.querySelector('.display-4').innerHTML = `
                 ${vendorName}
@@ -72,6 +72,7 @@ function initMap() {
         lat = position.coords.latitude
         long = position.coords.longitude
 
+
         // directions API
 
         var userLatLng = {
@@ -79,15 +80,31 @@ function initMap() {
           lng: long
         }
 
+      if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(
+
+          Position,
+          displayError, 
+          { enableHighAccuracy: true }
+
+        )
+      } else {
+        window.alert('Geolocation not supported by this browser')
+      }
+      // get user location
+      function Position (position) {
+        lat = position.coords.latitude
+        long = position.coords.longitude
+
+        // directions API
+
+
         var origin = new google.maps.LatLng(lat, long) // place user location here
         var destination = new google.maps.LatLng(vendorLat, vendorLong) // vendor location
 
         var directionsService = new google.maps.DirectionsService()
-
         // added option to get rid of default markers with directions api
         var directionsRenderer = new google.maps.DirectionsRenderer();
-
- 
 
 
         var mapOptions = {
@@ -95,7 +112,6 @@ function initMap() {
           center: origin,
           disableDefaultUI: true
         }
-
 
 
         var map = new google.maps.Map(document.getElementById('map'), mapOptions)
@@ -115,6 +131,7 @@ function initMap() {
         calcRoute()
 
         function calcRoute() {
+
           var request = {
             origin: origin,
             destination: destination,
@@ -128,5 +145,7 @@ function initMap() {
         }
       }
 
+
     })
+
 }
