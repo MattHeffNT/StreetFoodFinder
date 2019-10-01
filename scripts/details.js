@@ -1,5 +1,5 @@
 
-
+function details () {
   // Send request to server
   fetch(url)
 
@@ -35,7 +35,7 @@
                 </ul>
                 `
     })
-}
+  }
 
 function initMap() {
 
@@ -72,7 +72,6 @@ function initMap() {
         lat = position.coords.latitude
         long = position.coords.longitude
 
-
         // directions API
 
         var userLatLng = {
@@ -80,31 +79,15 @@ function initMap() {
           lng: long
         }
 
-      if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(
-
-          Position,
-          displayError, 
-          { enableHighAccuracy: true }
-
-        )
-      } else {
-        window.alert('Geolocation not supported by this browser')
-      }
-      // get user location
-      function Position (position) {
-        lat = position.coords.latitude
-        long = position.coords.longitude
-
-        // directions API
-
-
         var origin = new google.maps.LatLng(lat, long) // place user location here
         var destination = new google.maps.LatLng(vendorLat, vendorLong) // vendor location
 
         var directionsService = new google.maps.DirectionsService()
+
         // added option to get rid of default markers with directions api
         var directionsRenderer = new google.maps.DirectionsRenderer();
+
+ 
 
 
         var mapOptions = {
@@ -112,6 +95,7 @@ function initMap() {
           center: origin,
           disableDefaultUI: true
         }
+
 
 
         var map = new google.maps.Map(document.getElementById('map'), mapOptions)
@@ -131,7 +115,6 @@ function initMap() {
         calcRoute()
 
         function calcRoute() {
-
           var request = {
             origin: origin,
             destination: destination,
@@ -145,7 +128,5 @@ function initMap() {
         }
       }
 
-
     })
-
 }
