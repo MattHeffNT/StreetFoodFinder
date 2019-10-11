@@ -1,99 +1,139 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- my local css  -->
-    <link rel="stylesheet" href="./styles/main.css">
+        <!-- my local css  -->
+        <link rel="stylesheet" href="./styles/main.css">
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css"
+            rel="stylesheet">
 
-    <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/favicon.ico">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.min.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/favicon.ico">
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- swiper carousel css -->
+        <link rel="stylesheet" href="node_modules\swiper\css\swiper.min.css">
+
+        <!-- ejs -->
+        <script src="node_modules/ejs/ejs.js"></script>
+
+        <!-- my local javascript file -->
+        <script src="./scripts/details.js"></script>
+
+        <!-- font awesome icons -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+            integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+        <!-- manifest link -->
+        <link rel="manifest" href="manifest.json">
+
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="icon" type="image/gif" href="animated_favicon1.gif">
+
+        <title>Darwin Street Food Finder!</title>
+
+    </head>
+
+    <body onload="streetFood()">
 
 
-    <!-- swiper js/css -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
 
-    <!-- ejs -->
-    <!-- <script src="ejs.js"></script> -->
+        <div class="container-fluid">
 
-    <!-- my local javascript file -->
-    <script src="./scripts/javascript.js"></script>
-    <script src="./scripts/details.js"></script>
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
 
-    <!-- font awesome icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+                    <h1 class="display-4">Street Food Finder</h1>
 
-    <!-- manifest link -->
-    <link rel="manifest" href="manifest.json">
-
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="icon" type="image/gif" href="animated_favicon1.gif">
-
-    <title>Darwin Street Food Finder!</title>
-
-</head>
-
-<body onload="streetFood()">
-
-
-
-    <div class="container-fluid">
-
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-
-                <h1 class="display-4">Street Food Finder</h1>
-
-                <p class="lead">Darwin Street Food Finder</p>
+                    <p class="lead">Darwin Street Food Finder</p>
+                </div>
             </div>
+
         </div>
 
-        <div class="container-fluid" id="vendors"></div>
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+            <!-- end of swiper -->
 
 
-    </div>
+
+            <div class="container-fluid" id="vendors"></div>
 
 
+        </div>
 
-    <!-- JQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js">
-    </script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/js/mdb.min.js">
-    </script>
 
-    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js">
+        </script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/js/mdb.min.js">
+        </script>
+        <!-- my other local javascript -->
+        <script src="./scripts/javascript.js"></script>
 
-    <!-- swiper initialize -->
-    <script>
-        var mySwiper = new Swiper('.swiper-container', {
-            // Optional parameters
-            slidesPerView: '3',
-            spaceBetween: 30,
-            pagination: {
+        <!-- swiper js -->
+        <script src="node_modules\swiper\js\swiper.min.js"></script>
+
+
+        <!-- Initialize Swiper -->
+        <script>
+            var mySwiper = new Swiper ('.swiper-container', {
+              // Optional parameters       
+              loop: true,
+              slidesPerView: 3,
+              spaceBetween: 5,
+          
+              // If we need pagination
+              pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
-            },
+              },
+          
+              // Navigation arrows
+              navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              },
+          
+              // And if we need scrollbar
+              scrollbar: {
+                el: '.swiper-scrollbar',
+              },
+            })
+            </script>
 
-        });
-    </script>
-</body>
+
+    </body>
 
 </html>

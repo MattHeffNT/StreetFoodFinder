@@ -23,10 +23,9 @@ function details () {
       var vendorLatLng = { lat: vendorLat, lng: vendorLong }
 
 
-      document.querySelector('.display-4').innerHTML = `
-                ${vendorName}
-                `
-      document.getElementById('body-container').innerHTML = `<ul style="list-style:none;">
+      document.getElementById('body-container').innerHTML = `
+              <h1> ${vendorName} </h1>
+              <ul style="list-style:none;">
                <li><strong> Location: </strong>${vendorLocation}</li>
                 <li><strong> Weekend Hours: </strong>${vendorWeHours}</li>
                 <li><strong> Weekday Hours: </strong>${vendorWdHours}</li>
