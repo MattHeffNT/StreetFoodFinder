@@ -27,9 +27,7 @@
     .card {
         margin-top: 2em;
         margin-bottom: 1.2em;
-        width:40% !important;
         grid-column:2;
-        width: 20% !important;
     }
 
     .swiper-container {
