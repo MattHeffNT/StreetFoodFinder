@@ -29,7 +29,6 @@ function streetFood() {
       for (let i = 0; i < data.features.length; i++) {
 
 
-
         var vendor = data.features[i].properties.BusinessName
 
         // hacky way of getting rid of duplicate names, need to consider method of fixing the issue with Ken's Crepes Mindil as
