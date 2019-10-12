@@ -1,15 +1,20 @@
 /* Desktop display media query (just for testing purposes) */
-
 @media only screen and (min-width: 800px) {
+
     body {
-        /* display: grid; */
-        width: margin: 0 auto;
+        display:grid;
+        width: margin 0 auto;
         grid-gap: 1px;
         grid-template-columns: repeat(3, 1fr);
         margin-top: 1em;
         opacity: 1;
         transition: 1s;
+        background-image: url("images\background.jpg") !important;
+        background-repeat: no-repeat;
+        background-size: auto;
+        /* background-image */
     }
+    
     .container-fluid {
         grid-column: 2;
         justify-content: center;
@@ -23,7 +28,8 @@
         margin-top: 2em;
         margin-bottom: 1.2em;
         width:40% !important;
-        /* width: 50% !important; */
+        grid-column:2;
+        width: 20% !important;
     }
 
     .swiper-container {
@@ -39,6 +45,12 @@
         
         margin-bottom: 1em;
         justify-content: center !important;
+    }
+    
+    #vendors {
+
+        display: grid;
+        justify-items: center;
     }
 
     
@@ -60,6 +72,12 @@
     .swiper-button-prev,.swiper-button-next {
         display:none;
     }
+
+    body {
+        background-image: url("images\background.jpg") !important;
+        background-repeat: no-repeat;
+        background-size: auto;
+    }
     
     
 }
@@ -73,6 +91,7 @@ body {
     position: relative;
     opacity: 1;
     transition: 1s;
+    background-image: url("images\background.jpg") !important;
 }
 
 .swiper-button-prev,.swiper-button-next {
@@ -113,7 +132,6 @@ ul {
 .card {
     margin-top: 2em;
     margin-bottom: 1.2em;
-    width:65% !important;
     /* width: 50% !important; */
 }
 
