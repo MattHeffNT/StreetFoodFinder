@@ -31,12 +31,13 @@ function streetFood() {
 
 
         var vendor = data.features[i].properties.BusinessName
-        // so for some reason it isn't picking up duplicates with an if function, need to check that it's iterating
-        //through the data correctly
+
+        // hacky way of getting rid of duplicate names, need to consider method of fixing the issue with Ken's Crepes Mindil as
+        // the ' is incorrect.....
+
 
         if (vendor == "Ken’s Crepes Mindil") {
 
-          //vendor = "Ken's Crepes Mindil"
           var KCM = [i]
 
           data.features[KCM].properties.BusinessName = "Ken's Crepes Mindil"
@@ -52,18 +53,15 @@ function streetFood() {
           } else {
 
 
-            // chuck all the code in here
-
             // figure out how to add specific vendor images instead of stock
-
-
+            // horizontal swiping on mobile still not working.
 
 
               var vendorName = data.features[i].properties.BusinessName
-              document.querySelector('.swiper-wrapper').innerHTML +=
+              document.querySelector('#vendors').innerHTML +=
 
 
-              `    <div class="swiper-slide">
+              `   
                     <!-- Card -->
                     <div class="card">
                       <!-- Card image -->
@@ -83,8 +81,6 @@ function streetFood() {
                       </div>
                       </a>
                     </div>
-                    </div>
-                
                         `
           }
         }
