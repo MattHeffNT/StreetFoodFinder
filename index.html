@@ -53,36 +53,15 @@
 
     <body onload="streetFood()">
 
-
-
         <div class="container-fluid">
-
-            <div class="jumbotron jumbotron-fluid">
-                <div class="container">
-
-                    <h1 class="display-4">Street Food Finder</h1>
-
-                    <p class="lead">Darwin Street Food Finder</p>
-                </div>
-            </div>
+            <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand" href="index.html">
+                  <img src=".\images\icons\icon-512x512.png" width="30" height="30" alt=""style="margin-right:2rem;">
+                  Darwin Streetfood Finder
+                </a>
+              </nav>
 
         </div>
-
-        <!-- Slider main container -->
-        <!-- <div class="swiper-container"> -->
-            <!-- Additional required wrapper -->
-            <!-- <div class="swiper-wrapper">
-
-            </div> -->
-            <!-- If we need pagination -->
-            <!-- <div class="swiper-pagination"></div> -->
-            <!-- If we need navigation buttons -->
-            <!-- <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div> -->
-            <!-- end of swiper -->
-
-
 
             <div class="container-fluid" id="vendors"></div>
 
@@ -101,38 +80,6 @@
         </script>
         <!-- my other local javascript -->
         <script src="./scripts/javascript.js"></script>
-
-        <!-- swiper js -->
-        <script src="node_modules\swiper\js\swiper.min.js"></script>
-
-
-        <!-- Initialize Swiper -->
-        <script>
-            var mySwiper = new Swiper ('.swiper-container', {
-              // Optional parameters       
-              loop: true,
-              slidesPerView: 3,
-              spaceBetween: 5,
-          
-              // If we need pagination
-              pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-              },
-          
-              // Navigation arrows
-              navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-              },
-          
-              // And if we need scrollbar
-              scrollbar: {
-                el: '.swiper-scrollbar',
-              },
-            })
-            </script>
-
 
     </body>
 

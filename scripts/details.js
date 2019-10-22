@@ -6,6 +6,7 @@ function details () {
 
   // Get JSON object from request
 
+
     .then((response) => response.json())
     .then((data) => {
       var i = sessionStorage.getItem('key')
