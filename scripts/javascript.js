@@ -57,30 +57,61 @@ function streetFood() {
 
 
               var vendorName = data.features[i].properties.BusinessName
-              document.querySelector('#vendors').innerHTML +=
+              // document.querySelector('#vendors').innerHTML +=
 
 
-              `   
-                    <!-- Card -->
-                    <div class="card">
-                      <!-- Card image -->
-                      <div class="view overlay">
-                      <!-- add Onclick add to session storage so as to record value of i for dynamic details page -->
-                        <img class="card-img-top" src="https://source.unsplash.com/collection/139608/544x362/?${[i]}" alt="Card image">
-                        <a href="./details.html" onclick = " sessionStorage.setItem('key', '${[i]}'); ">
-                          <div class="mask rgba-white-slight"></div>
+              // `   
+              //       <!-- Card -->
+              //       <div class="card">
+              //         <!-- Card image -->
+              //         <div class="view overlay">
+              //         <!-- add Onclick add to session storage so as to record value of i for dynamic details page -->
+              //           <img class="card-img-top" src="https://source.unsplash.com/collection/139608/544x362/?${[i]}" alt="Card image">
+              //           <a href="./details.html" onclick = " sessionStorage.setItem('key', '${[i]}'); ">
+              //             <div class="mask rgba-white-slight"></div>
                         
-                      </div>
-                      <!-- Card content -->
-                      <div class="card-body">
-                        <!-- Title -->
-                        <h4 class="card-title">${vendorName}</h4>
-                        <!-- Text -->
-                        <p class="card-text"></p>
-                      </div>
-                      </a>
-                    </div>
+              //         </div>
+              //         <!-- Card content -->
+              //         <div class="card-body">
+              //           <!-- Title -->
+              //           <h4 class="card-title">${vendorName}</h4>
+              //           <!-- Text -->
+              //           <p class="card-text"></p>
+              //         </div>
+              //         </a>
+              //       </div>
+              //           `
+
+                        document.querySelector('.swiper-wrapper').innerHTML +=
+
                         `
+                        <div class="swiper-slide">
+                        
+                              <!-- Card -->
+                              <div class="card">
+                                <!-- Card image -->
+                                <div class="view overlay">
+                                <!-- add Onclick add to session storage so as to record value of i for dynamic details page -->
+                                  <img class="card-img-top" src="https://source.unsplash.com/collection/139608/544x362/?${[i]}" alt="Card image">
+                                  <a href="./details.html" onclick = " sessionStorage.setItem('key', '${[i]}'); ">
+                                    <div class="mask rgba-white-slight"></div>
+                                  
+                                </div>
+                                <!-- Card content -->
+                                <div class="card-body">
+                                  <!-- Title -->
+                                  <h4 class="card-title">${vendorName}</h4>
+                                  <!-- Text -->
+                                  <p class="card-text"></p>
+                                </div>
+                                </a>
+                              </div>
+
+                        </div>
+                        </div>
+
+                        `
+
           }
         }
       }
