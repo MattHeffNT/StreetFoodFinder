@@ -81,7 +81,7 @@ function streetFood() {
               //         </a>
               //       </div>
               //           `
-
+              if (document.readyState)
                         document.querySelector('.swiper-wrapper').innerHTML +=
 
                         `
