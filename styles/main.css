@@ -157,15 +157,11 @@ ul {
 .card {
     margin-top: 2em;
     margin-bottom: 1.2em;
-    width: 50% !important;
+    width: 100% !important;
 }
 
 .swiper-slide {
     width: 44% !important;
-}
-
-.card {
-    width: 100% !important;
 }
 
 
