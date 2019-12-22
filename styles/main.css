@@ -97,6 +97,11 @@
         display:none;
     }
 
+    .swiper-slide {
+        width:100% !important;
+    }
+    
+
     body {
         background-image: url("images\background.jpg") !important;
         background-repeat: no-repeat;
@@ -129,6 +134,13 @@ body {
     text-align:center !important;
 }
 
+.navbar-brand {
+
+    margin-right:1rem;
+
+
+}
+
 ul {
     padding-left: 0em !important;
 }
@@ -147,6 +159,9 @@ ul {
     justify-content: center;
 }
 
+.swiper-slide {
+    width:100% !important;
+}
 
 
 .display-4 {
@@ -165,7 +180,12 @@ ul {
 }
 
 .card {
-    width:100%;
+    width:100% !important;
+}
+
+.card-body {
+
+    height: 4rem;
 }
 
 
