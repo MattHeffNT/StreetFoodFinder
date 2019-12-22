@@ -86,9 +86,8 @@ function initMap() {
         var directionsService = new google.maps.DirectionsService()
 
         // added option to get rid of default markers with directions api
-        var directionsRenderer = new google.maps.DirectionsRenderer();
 
- 
+        var directionsRenderer = new google.maps.DirectionsRenderer();
 
 
         var mapOptions = {
@@ -96,7 +95,6 @@ function initMap() {
           center: origin,
           disableDefaultUI: true
         }
-
 
 
         var map = new google.maps.Map(document.getElementById('map'), mapOptions)
