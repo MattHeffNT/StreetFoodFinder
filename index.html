@@ -64,6 +64,34 @@
 
         <br>
 
+        <!-- Slider main container -->
+        <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <!-- <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+            <div class="swiper-slide">Slide 9</div>
+            <div class="swiper-slide">Slide 10</div> -->
+        </div>
+        <!-- add pagination -->
+        <!-- <div class="swiper-pagination"></div> -->
+    
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    
+        <!-- If we need scrollbar -->
+        <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
+
+        </div>
 
         <div class = "container-fluid">
                 <!-- Slider main container -->
@@ -95,97 +123,31 @@
         <script src="./scripts/javascript.js"></script>
 
 
-        <!-- Swiper with cards populated with darwin street food api -->
-
         <script>
-
-            var url = 'https://open-darwin.opendata.arcgis.com/datasets/6d6453a83bbc4ab8b7591e545dd40d65_0.geojson'
-
-            // Send request to server
-            fetch (url)
-
-              // Get JSON object from request
-              .then((response) => response.json())
-              .then((data) => {
-          
-                // should be able to use array map here
-          
-                for (let i = 0; i < data.features.length; i++) {
-          
-          
-            var vendor = data.features[i].properties.BusinessName
-    
-            // hacky way of getting rid of duplicate names, need to consider method of fixing the issue with Ken's Crepes Mindil as
-            // the ' is incorrect.....
-    
-            // console.log(vendor)
-    
-                var vendorName = data.features[i].properties.BusinessName
-                const inject = document.querySelector('.swiper-wrapper').innerHTML +=
-          
-                    `   
-
-                            
-                    `                                                            
-                // swiper initialize 
-                const mySwiper = new Swiper ('.swiper-container', {
+                var mySwiper = new Swiper ('.swiper-container', {
                   // Optional parameters
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                    speed: 7,
-                    loop:true,
-                    pagination: {
-                        el: '.swiper-pagination',
-                       clickable: true,
-                    },
-                }
-            );
-
-
-            mySwiper.appendSlide(
-
-            `
-            <!-- Card -->
-            <div class = "swiper-slide">
-                <div class="card">
-                    <!-- Card image -->
-                    <div class="view overlay">
-                    <!-- add Onclick add to session storage so as to record value of i for dynamic details page -->
-                    <img class="card-img-top" src=https://source.unsplash.com/collection/139608/544x362/?${[i]}" alt="Card image">
-                    <a href="./details.html" onclick = " sessionStorage.setItem('key', '${[i]}'); ">
-                    <div class="mask rgba-white-slight"></div>
-                    </div>
-                    <!-- Card content -->
-                    <div class="card-body">
-                    <!-- Title -->
-                    <h4 class="card-title">${vendorName}</h4>
-                    <!-- Text -->
-                    <p class="card-text"></p>
-                    </div>
-                    </a>
-                </div>
-            </div>           
-            `)
-          
-            
-            mySwiper.update();
-
-        //  mySwiper.update(); //update swiper so it redoes the bindings
-            
-            }});
-            
-
-        </script>
-
-        <!-- <script>
-
-            function fixSwiperForIE(swiper) {
-                setTimeout(function () {
-                    swiper.onResize();
-                });
-            }
-        </script>  -->
-        
+                  slidesPerView: 3,
+                  spaceBetween: 10,
+                  loop: true,
+              
+                  // If we need pagination
+                  pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                  },
+              
+                  // Navigation arrows
+                  navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                  },
+              
+                  // And if we need scrollbar
+                  scrollbar: {
+                    el: '.swiper-scrollbar',
+                  },
+                })
+                </script>
 
     </body>
 
