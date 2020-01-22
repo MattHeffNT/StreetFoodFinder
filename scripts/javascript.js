@@ -10,12 +10,6 @@ if ('serviceWorker' in navigator) {
   })
 }
 
-// had this here just for a cool fade effect while elements load in, definitely need to fix up later
-setTimeout(Fade, 1000)
-
-function Fade() {
-  document.querySelector('body').style.opacity = '1'
-}
 
 function streetFood () {
   var url = 'https://open-darwin.opendata.arcgis.com/datasets/6d6453a83bbc4ab8b7591e545dd40d65_0.geojson'
@@ -53,10 +47,6 @@ function streetFood () {
           } else {
 
 
-            // figure out how to add specific vendor images instead of stock
-            // horizontal swiping on mobile still not working.
-
-
             var vendorName = data.features[i].properties.BusinessName
             document.querySelector('#vendors').innerHTML +=
 
@@ -68,7 +58,7 @@ function streetFood () {
                       <div class="view overlay">
                       <!-- add Onclick add to session storage so as to record value of i for dynamic details page -->
                         <img class="card-img-top" src="https://source.unsplash.com/collection/139608/544x362/?${[i]}" alt="Card image">
-                        <a href="./details.html" onclick = " sessionStorage.setItem('key', '${[i]}'); ">
+                        <a href="#" onclick = " sessionStorage.setItem('key', '${[i]}'); details(); ">
                           <div class="mask rgba-white-slight"></div>
                         
                       </div>
