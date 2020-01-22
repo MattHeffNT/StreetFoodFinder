@@ -1,12 +1,12 @@
-
 function details () {
   // Send request to server
   var url = 'https://open-darwin.opendata.arcgis.com/datasets/6d6453a83bbc4ab8b7591e545dd40d65_0.geojson'
+
+  document.querySelector('#map').style.display = 'block'
+
   fetch(url)
 
   // Get JSON object from request
-
-
     .then((response) => response.json())
     .then((data) => {
       var i = sessionStorage.getItem('key')
@@ -22,25 +22,25 @@ function details () {
       var vendorLong = data.features[i].geometry.coordinates[0]
 
       var vendorLatLng = { lat: vendorLat, lng: vendorLong }
-
-
-      document.getElementById('body-container').innerHTML = `
+      
+      document.querySelector('#vendors').innerHTML = `
               <h1> ${vendorName} </h1>
               <ul style="list-style:none;">
                <li><strong> Location: </strong>${vendorLocation}</li>
                 <li><strong> Weekend Hours: </strong>${vendorWeHours}</li>
                 <li><strong> Weekday Hours: </strong>${vendorWdHours}</li>
                 <li><strong> Public Holidy Hours: </strong>${vendorPhHours}</li>            
-                <li style="text-align:center;"><a class="btn btn-primary" href=${vendorWeb} role="button">Website</a></li>
-                
+                <li style="text-align:center;"><a class="btn btn-primary" href=${vendorWeb} role="button">Website</a></li>            
                 </ul>
+
                 `
     })
   }
 
+window.setTimeout (function(){
 function initMap() {
 
-
+  console.log("it did stuff")
   var url = 'https://open-darwin.opendata.arcgis.com/datasets/6d6453a83bbc4ab8b7591e545dd40d65_0.geojson'
 
   // Send request to server
@@ -97,7 +97,7 @@ function initMap() {
         }
 
 
-        var map = new google.maps.Map(document.getElementById('map'), mapOptions)
+        var map = new google.maps.Map(document.querySelector('#map'), mapOptions)
         //console.log("added map")
 
         directionsRenderer.setMap(map)
@@ -129,3 +129,4 @@ function initMap() {
 
     })
 }
+},3000)
