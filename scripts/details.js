@@ -37,7 +37,7 @@ function details () {
     })
   }
 
-window.setTimeout (function(){
+
 function initMap() {
 
   console.log("it did stuff")
@@ -129,4 +129,3 @@ function initMap() {
 
     })
 }
-},3000)
