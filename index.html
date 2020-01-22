@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -33,7 +32,8 @@
         <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 
         <!-- my local javascript file -->
-        <script src="./scripts/details.js"></script>
+        <!-- <script src="./scripts/details.js"></script> -->
+        <script src="./scripts/javascript.js"></script>
 
         <!-- font awesome icons -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
@@ -51,8 +51,6 @@
 
     <body onload="streetFood()">
 
-            
-
         <div class="container-fluid">
             <nav class="navbar navbar-light bg-light">
                 <a class="navbar-brand" href="index.html">
@@ -63,18 +61,15 @@
         </div>
 
         <br>
-
-
+       
         <div id ="vendors" class = "container-fluid"></div>
 
-        
+        <div id="map" style="color:red;text-align:center;display:none;"class = "container-fluid">
+            You need to allow access to your user location to get the
+            StreetFood Map
+        </div>       
 
 
-
-
-        <!-- swiper path -->
-        <script src="https://unpkg.com/swiper/js/swiper.js"></script>
-        <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
         <!-- Bootstrap tooltips -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js">
         </script>
@@ -85,8 +80,11 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/js/mdb.min.js">
         </script>
         <!-- my other local javascript -->
-        <script src="./scripts/javascript.js"></script>
+        <script src="./scripts/details.js"></script>
 
+        <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8tSPVnfotd81PYjcTNRe71mcTVBT3TdU&callback=initMap"
+        async defer></script>
 
     </body>
 
