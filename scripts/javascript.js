@@ -65,7 +65,7 @@ function pushIT () {
                       <div class="view overlay">
                       <!-- add Onclick add to session storage so as to record value of i for dynamic details page -->
                         <img class="card-img-top" src="https://source.unsplash.com/collection/139608/544x362/?${[i]}" alt="Card image">
-                        <a href="" onclick = "sessionStorage.setItem('key', '${[i]}'); details();">
+                        <a href="" onclick = "sessionStorage.setItem('key', '${[i]}'); pushIT (); details(); ">
                           <div class="mask rgba-white-slight"></div>
                         
                       </div>
