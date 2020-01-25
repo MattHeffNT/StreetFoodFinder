@@ -11,8 +11,13 @@ if ('serviceWorker' in navigator) {
 }
 
 
-function streetFood () {
+
+  
   var url = 'https://open-darwin.opendata.arcgis.com/datasets/6d6453a83bbc4ab8b7591e545dd40d65_0.geojson'
+
+  var domain = window.location.hostname
+
+
 
   // Send request to server
   fetch (url)
@@ -47,9 +52,9 @@ function streetFood () {
           } else {
 
 
+
             var vendorName = data.features[i].properties.BusinessName
             document.querySelector('#vendors').innerHTML +=
-
 
               `   
                     <!-- Card -->
@@ -58,7 +63,7 @@ function streetFood () {
                       <div class="view overlay">
                       <!-- add Onclick add to session storage so as to record value of i for dynamic details page -->
                         <img class="card-img-top" src="https://source.unsplash.com/collection/139608/544x362/?${[i]}" alt="Card image">
-                        <a href="#" onclick = " sessionStorage.setItem('key', '${[i]}'); details(); ">
+                        <a href="#" onclick = "sessionStorage.setItem('key', '${[i]}'); details();">
                           <div class="mask rgba-white-slight"></div>
                         
                       </div>
@@ -76,5 +81,5 @@ function streetFood () {
           }
         }
       }
-    })
-}
+    });
+  

@@ -1,52 +1,51 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-        <!-- my local css  -->
-        <link rel="stylesheet" href="./styles/main.css">
-
-        <!-- Bootstrap core CSS -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css"
-            rel="stylesheet">
-
-        <!-- Material Design Bootstrap -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css" rel="stylesheet">
-
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.min.css">
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="shortcut icon" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/favicon.ico">
-        <!-- JQuery -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
-        <!-- my local javascript file -->
-        <!-- <script src="./scripts/details.js"></script> -->
-        <script src="./scripts/javascript.js"></script>
-
-        <!-- font awesome icons -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-            integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
-        <!-- manifest link -->
-        <link rel="manifest" href="manifest.json">
-
-        <link rel="shortcut icon" href="favicon.ico">
-        <link rel="icon" type="image/gif" href="animated_favicon1.gif">
+            <!-- Required meta tags -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1">
+    
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+            <!-- my local css  -->
+            <link rel="stylesheet" href="./styles/main.css">
+    
+            <!-- Bootstrap core CSS -->
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css"
+                rel="stylesheet">
+    
+            <!-- Material Design Bootstrap -->
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css" rel="stylesheet">
+            <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.min.css">
+            <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="shortcut icon" href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/favicon.ico">
+    
+    
+            <!-- my local javascript file -->
+            <script src="./scripts/javascript.js"></script>
+            <script src="./scripts/details.js"></script>
+    
+            <!-- font awesome icons -->
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+                integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    
+            <!-- manifest link -->
+            <link rel="manifest" href="manifest.json">
+    
+            <link rel="shortcut icon" href="favicon.ico">
+            <link rel="icon" type="image/gif" href="animated_favicon1.gif">
+    
+     
 
         <title>Darwin Street Food Finder!</title>
 
     </head>
 
-    <body onload="streetFood()">
+    <body>
 
         <div class="container-fluid">
             <nav class="navbar navbar-light bg-light">
@@ -58,15 +57,22 @@
         </div>
 
         <br>
-       
+
         <div id ="vendors" class = "container-fluid"></div>
 
-        <div id="map" style="color:red;text-align:center;display:none;"class = "container-fluid">
+        <div id="map" style="color:red;text-align:center;display:none;" div class = "container-fluid">
             You need to allow access to your user location to get the
             StreetFood Map
         </div>       
 
 
+        <!-- google map -->
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8tSPVnfotd81PYjcTNRe71mcTVBT3TdU&callback=initMap"
+            async defer></script>
+
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!-- Bootstrap tooltips -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js">
         </script>
@@ -76,12 +82,6 @@
         <!-- MDB core JavaScript -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/js/mdb.min.js">
         </script>
-        <!-- my other local javascript -->
-        <script src="./scripts/details.js"></script>
-
-        <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8tSPVnfotd81PYjcTNRe71mcTVBT3TdU&callback=initMap"
-        async defer></script>
 
     </body>
 

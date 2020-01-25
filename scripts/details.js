@@ -1,8 +1,14 @@
+
 function details () {
   // Send request to server
   var url = 'https://open-darwin.opendata.arcgis.com/datasets/6d6453a83bbc4ab8b7591e545dd40d65_0.geojson'
 
+  // history.replaceState(null,"details","/details")
+
+
   document.querySelector('#map').style.display = 'block'
+
+  var domain = window.location.hostname
 
   fetch(url)
 
@@ -10,6 +16,7 @@ function details () {
     .then((response) => response.json())
     .then((data) => {
       var i = sessionStorage.getItem('key')
+      
 
       // put JSON properties into variables for easier use
       var vendorName = data.features[i].properties.BusinessName
@@ -21,7 +28,6 @@ function details () {
       var vendorLat = data.features[i].geometry.coordinates[1]
       var vendorLong = data.features[i].geometry.coordinates[0]
 
-      var vendorLatLng = { lat: vendorLat, lng: vendorLong }
       
       document.querySelector('#vendors').innerHTML = `
               <h1> ${vendorName} </h1>
@@ -40,7 +46,6 @@ function details () {
 
 function initMap() {
 
-  console.log("it did stuff")
   var url = 'https://open-darwin.opendata.arcgis.com/datasets/6d6453a83bbc4ab8b7591e545dd40d65_0.geojson'
 
   // Send request to server
@@ -58,6 +63,7 @@ function initMap() {
         lng: vendorLong
       }
 
+
       var navOptions = {
         enableHighAccuracy: true,
         timeout: 5000
@@ -70,8 +76,8 @@ function initMap() {
 
       // get user location
       function Position(position) {
-        lat = position.coords.latitude
-        long = position.coords.longitude
+       var lat = position.coords.latitude
+       var long = position.coords.longitude
 
         // directions API
 
@@ -80,10 +86,12 @@ function initMap() {
           lng: long
         }
 
-        var origin = new google.maps.LatLng(lat, long) // place user location here
-        var destination = new google.maps.LatLng(vendorLat, vendorLong) // vendor location
+        var origin = new google.maps.LatLng(lat, long); // place user location here
 
-        var directionsService = new google.maps.DirectionsService()
+
+        var destination = new google.maps.LatLng(vendorLat, vendorLong); // vendor location
+
+        var directionsService = new google.maps.DirectionsService();
 
         // added option to get rid of default markers with directions api
 
@@ -96,20 +104,22 @@ function initMap() {
           disableDefaultUI: true
         }
 
+        console.log(origin)
+
 
         var map = new google.maps.Map(document.querySelector('#map'), mapOptions)
-        //console.log("added map")
+      
 
-        directionsRenderer.setMap(map)
+        directionsRenderer.setMap(map);
 
-        var origin = new google.maps.LatLng({
+        var origin = new google.maps.LatLng({ // place user location here
           lat: lat,
           lng: long
-        }) // place user location here
-        var destination = new google.maps.LatLng({
+        }) 
+        var destination = new google.maps.LatLng({ // vendor location
           lat: vendorLat,
           lng: vendorLong
-        }) // vendor location
+        }) 
 
         calcRoute()
 
