@@ -3,16 +3,16 @@ function details () {
   // Send request to server
   var url = 'https://open-darwin.opendata.arcgis.com/datasets/6d6453a83bbc4ab8b7591e545dd40d65_0.geojson'
 
-  // history.pushState(null,"details","/details")
 
 
   document.querySelector('#map').style.display = 'block'
 
-  var domain = window.location.hostname
+  
+  history.pushState('details',"details","/details")
 
-  fetch(url)
+    fetch(url)
 
-  // Get JSON object from request
+  // // Get JSON object from request
     .then((response) => response.json())
     .then((data) => {
       var i = sessionStorage.getItem('key')
@@ -28,20 +28,41 @@ function details () {
       var vendorLat = data.features[i].geometry.coordinates[1]
       var vendorLong = data.features[i].geometry.coordinates[0]
 
-      
-      document.querySelector('#vendors').innerHTML = `
-              <h1> ${vendorName} </h1>
-              <ul style="list-style:none;">
-               <li><strong> Location: </strong>${vendorLocation}</li>
-                <li><strong> Weekend Hours: </strong>${vendorWeHours}</li>
-                <li><strong> Weekday Hours: </strong>${vendorWdHours}</li>
-                <li><strong> Public Holidy Hours: </strong>${vendorPhHours}</li>            
-                <li style="text-align:center;"><a class="btn btn-primary" href=${vendorWeb} role="button">Website</a></li>            
-                </ul>
+      let state = { 
+        innerHTML: `      
+        <h1> ${vendorName} </h1>
+        <ul style="list-style:none;">
+         <li><strong> Location: </strong>${vendorLocation}</li>
+          <li><strong> Weekend Hours: </strong>${vendorWeHours}</li>
+          <li><strong> Weekday Hours: </strong>${vendorWdHours}</li>
+          <li><strong> Public Holidy Hours: </strong>${vendorPhHours}</li>
+    
+        </ul>`
+      };
 
-                `
-    })
-  }
+      
+      document.querySelector('#vendors').innerHTML = state.innerHTML
+
+
+      window.onpopstate = function(event) {
+        console.log("Location: " + this.document.location + ", State" + this.JSON.stringify(event.state))
+            
+            if (event.state) {
+              {state.innerHTML = event.state;} 
+              console.log(event.state)
+            }
+
+            document.querySelector('#vendors').innerHTML = ``
+      
+            Home();
+      
+      };
+    
+
+                
+    }
+  )
+
 
 
 function initMap() {
@@ -138,4 +159,8 @@ function initMap() {
       }
 
     })
-}
+
+}};
+
+
+
