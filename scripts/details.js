@@ -45,14 +45,20 @@ function details () {
 
 
       window.onpopstate = function(event) {
-        console.log("Location: " + this.document.location + ", State" + this.JSON.stringify(event.state))
+        // console.log("Location: " + this.document.location + ", State" + this.JSON.stringify(event.state))
             
             if (event.state) {
               {state.innerHTML = event.state;} 
-              console.log(event.state)
+              console.log(state.innerHTML)
+            }
+
+            if (state.innerHTML == 'details') {
+              
+              // details();
             }
 
             document.querySelector('#vendors').innerHTML = ``
+            document.querySelector('#map').innerHTML = ``
       
             Home();
       
@@ -62,6 +68,7 @@ function details () {
                 
     }
   )
+  }
 
 
 
@@ -120,14 +127,12 @@ function initMap() {
 
 
         var mapOptions = {
-          zoom: 14,
+          zoom: 20,
           center: origin,
           disableDefaultUI: true
         }
 
-        console.log(origin)
-
-
+        document.getElementById('map').style.color = "green"
         var map = new google.maps.Map(document.querySelector('#map'), mapOptions)
       
 
@@ -160,7 +165,4 @@ function initMap() {
 
     })
 
-}};
-
-
-
+};
