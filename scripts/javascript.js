@@ -17,12 +17,10 @@ function Home () {
   history.replaceState("home",null,"")
 
 
+
+
   var url = 'https://open-darwin.opendata.arcgis.com/datasets/6d6453a83bbc4ab8b7591e545dd40d65_0.geojson'
 
-  let state = { 
-
-    // insert the html injection here
-  }
 
 
   // Send request to server
@@ -39,7 +37,6 @@ function Home () {
 
         // hacky way of getting rid of duplicate names, need to consider method of fixing the issue with Ken's Crepes Mindil as
         // the ' is incorrect.....
-
 
         if (vendor == "Ken’s Crepes Mindil") {
 
@@ -58,6 +55,8 @@ function Home () {
           } else {
     
             var vendorName = data.features[i].properties.BusinessName
+
+
             document.querySelector('#vendors').innerHTML +=
 
               `   
@@ -83,16 +82,20 @@ function Home () {
                         `
           }
         }
-      }
+      } 
+
+
+    
     })};
 
     Home();
 
     // window.onpopstate = function(event) {
-    //   console.log("Location: " + this.document.location + ", State" + this.JSON.stringify(event.state))
+    //   // console.log("Location: " + this.document.location + ", State" + this.JSON.stringify(event.state))
           
     //       if (event.state) {
     //         {state.innerHTML = event.state;} 
-    //         console.log(event.state)
+    //         // console.log(event.state)
     //       }
+    //       details()
     //     };
