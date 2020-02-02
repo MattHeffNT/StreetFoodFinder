@@ -1,24 +1,28 @@
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function () {
-    navigator.serviceWorker.register('sw.js').then(function (registration) {
-      // Registration was successful
-      // console.log('ServiceWorker registration successful with scope: ', registration.scope)
-    }, function (err) {
-      // registration failed :(
-      console.log('ServiceWorker registration failed: ', err)
-    })
-  })
-}
+// if ('serviceWorker' in navigator) {
+//   window.addEventListener('load', function () {
+//     navigator.serviceWorker.register('sw.js').then(function (registration) {
+//       // Registration was successful
+//       // console.log('ServiceWorker registration successful with scope: ', registration.scope)
+//     }, function (err) {
+//       // registration failed :(
+//       console.log('ServiceWorker registration failed: ', err)
+//     })
+//   })
+// }
+
+// this is the initial state of the page (also calls the function)
+
+function Home () {
+
+  history.replaceState("home",null,"")
 
 
-function pushIT () {
-  history.replaceState('details page',"details","/details")
-}
-  
   var url = 'https://open-darwin.opendata.arcgis.com/datasets/6d6453a83bbc4ab8b7591e545dd40d65_0.geojson'
 
-  var domain = window.location.hostname
+  let state = { 
 
+    // insert the html injection here
+  }
 
 
   // Send request to server
@@ -52,9 +56,7 @@ function pushIT () {
             data.features[NPT].properties.BusinessName = "Noi Pad Thai"
 
           } else {
-
-
-            
+    
             var vendorName = data.features[i].properties.BusinessName
             document.querySelector('#vendors').innerHTML +=
 
@@ -65,7 +67,7 @@ function pushIT () {
                       <div class="view overlay">
                       <!-- add Onclick add to session storage so as to record value of i for dynamic details page -->
                         <img class="card-img-top" src="https://source.unsplash.com/collection/139608/544x362/?${[i]}" alt="Card image">
-                        <a href="" onclick = "sessionStorage.setItem('key', '${[i]}'); pushIT (); details(); ">
+                        <div class = "test" onclick = "sessionStorage.setItem('key', '${[i]}'); details();">
                           <div class="mask rgba-white-slight"></div>
                         
                       </div>
@@ -76,12 +78,21 @@ function pushIT () {
                         <!-- Text -->
                         <p class="card-text"></p>
                       </div>
-                      </a>
+                      </div>
                     </div>
                         `
-
           }
         }
       }
-    });
-  
+    })};
+
+    Home();
+
+    // window.onpopstate = function(event) {
+    //   console.log("Location: " + this.document.location + ", State" + this.JSON.stringify(event.state))
+          
+    //       if (event.state) {
+    //         {state.innerHTML = event.state;} 
+    //         console.log(event.state)
+    //       }
+    //     };
