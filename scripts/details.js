@@ -1,22 +1,13 @@
-
 function details () {
   // Send request to server
   var url = 'https://open-darwin.opendata.arcgis.com/datasets/6d6453a83bbc4ab8b7591e545dd40d65_0.geojson'
+  fetch(url)
 
+  // Get JSON object from request
 
-
-  document.querySelector('#map').style.display = 'block'
-
-  
-  history.pushState('details',"details","/details")
-
-    fetch(url)
-
-  // // Get JSON object from request
     .then((response) => response.json())
     .then((data) => {
       var i = sessionStorage.getItem('key')
-      
 
       // put JSON properties into variables for easier use
       var vendorName = data.features[i].properties.BusinessName
@@ -28,49 +19,21 @@ function details () {
       var vendorLat = data.features[i].geometry.coordinates[1]
       var vendorLong = data.features[i].geometry.coordinates[0]
 
-      let state = { 
-        innerHTML: `      
-        <h1> ${vendorName} </h1>
-        <ul style="list-style:none;">
-         <li><strong> Location: </strong>${vendorLocation}</li>
-          <li><strong> Weekend Hours: </strong>${vendorWeHours}</li>
-          <li><strong> Weekday Hours: </strong>${vendorWdHours}</li>
-          <li><strong> Public Holidy Hours: </strong>${vendorPhHours}</li>
-    
-        </ul>`
-      };
+      var vendorLatLng = { lat: vendorLat, lng: vendorLong }
 
-      
-      document.querySelector('#vendors').innerHTML = state.innerHTML
-
-
-      window.onpopstate = function(event) {
-        // console.log("Location: " + this.document.location + ", State" + this.JSON.stringify(event.state))
-            
-            if (event.state) {
-              {state.innerHTML = event.state;} 
-              console.log(state.innerHTML)
-            }
-
-            if (state.innerHTML == 'details') {
-              
-              // details();
-            }
-
-            document.querySelector('#vendors').innerHTML = ``
-            document.querySelector('#map').innerHTML = ``
-      
-            Home();
-      
-      };
-    
-
-                
-    }
-  )
+      document.getElementById('body-container').innerHTML = 
+              `
+              <h3> ${vendorName} </h3>
+              <ul style="list-style:none;">
+               <li><strong> Location: </strong>${vendorLocation}</li>
+                <li><strong> Weekend Hours: </strong>${vendorWeHours}</li>
+                <li><strong> Weekday Hours: </strong>${vendorWdHours}</li>
+                <li><strong> Public Holidy Hours: </strong>${vendorPhHours}</li>            
+                <li style="text-align:center;margin-top:2rem;margin-bottom:2rem;"><a class="button" href=${vendorWeb} role="button">Website</a></li>
+                </ul>
+                `
+    })
   }
-
-
 
 function initMap() {
 
@@ -91,21 +54,20 @@ function initMap() {
         lng: vendorLong
       }
 
-
       var navOptions = {
         enableHighAccuracy: true,
         timeout: 5000
       }
 
       function nothing() {
-        console.log('literally nothing')
+        //console.log('literally nothing')
       }
       navigator.geolocation.getCurrentPosition(Position, nothing, navOptions)
 
       // get user location
       function Position(position) {
-       var lat = position.coords.latitude
-       var long = position.coords.longitude
+        lat = position.coords.latitude
+        long = position.coords.longitude
 
         // directions API
 
@@ -114,38 +76,34 @@ function initMap() {
           lng: long
         }
 
-        var origin = new google.maps.LatLng(lat, long); // place user location here
+        var origin = new google.maps.LatLng(lat, long) // place user location here
+        var destination = new google.maps.LatLng(vendorLat, vendorLong) // vendor location
 
-
-        var destination = new google.maps.LatLng(vendorLat, vendorLong); // vendor location
-
-        var directionsService = new google.maps.DirectionsService();
+        var directionsService = new google.maps.DirectionsService()
 
         // added option to get rid of default markers with directions api
 
         var directionsRenderer = new google.maps.DirectionsRenderer();
 
-
         var mapOptions = {
-          zoom: 20,
+          zoom: 14,
           center: origin,
           disableDefaultUI: true
         }
 
-        document.getElementById('map').style.color = "green"
-        var map = new google.maps.Map(document.querySelector('#map'), mapOptions)
-      
+        var map = new google.maps.Map(document.getElementById('map'), mapOptions)
+        //console.log("added map")
 
-        directionsRenderer.setMap(map);
+        directionsRenderer.setMap(map)
 
-        var origin = new google.maps.LatLng({ // place user location here
+        var origin = new google.maps.LatLng({
           lat: lat,
           lng: long
-        }) 
-        var destination = new google.maps.LatLng({ // vendor location
+        }) // place user location here
+        var destination = new google.maps.LatLng({
           lat: vendorLat,
           lng: vendorLong
-        }) 
+        }) // vendor location
 
         calcRoute()
 
@@ -164,5 +122,4 @@ function initMap() {
       }
 
     })
-
-};
+}
